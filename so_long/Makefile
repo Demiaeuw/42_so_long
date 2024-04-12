@@ -6,9 +6,14 @@ SRCS =	main.c
 
 UTILS =	
 
+OTHER =	srcs/utils/ft_printf/ft_printf00.c\
+	srcs/utils/ft_printf/ft_printf01.c\
+	srcs/utils/ft_printf/ft_printf02.c
+
 # Fichiers objets
 OBJS = $(SRCS:.c=.o)
 OBJSUTILS = $(UTILS:.c=.o)
+OBJSOTHER = $(OTHER:.c=.o)
 
 # Flags de compilation
 CC = gcc
@@ -20,20 +25,22 @@ all: printhader printactionobj $(NAME) printactionobjok printend
 rapide: $(NAME)
 
 # Règle pour créer l'exécutable
-$(NAME): $(OBJS) $(OBJSUTILS)
-	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(OBJSUTILS)
+$(NAME): $(OBJS) $(OBJSUTILS) $(OBJSOTHER)
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(OBJSUTILS) $(OBJSOTHER)
 
 # Règle pour nettoyer les fichiers objets
 exe: all clean
 
 clean:
-	@$(RM) $(OBJS) $(OBJSUTILS)
+	@$(RM) $(OBJS) $(OBJSUTILS) $(OBJSOTHER)
 
 fclean: clean
-	@$(RM) $(NAME) $(NAMECHECK)
+	@$(RM) $(NAME)
 	@$(MAKE) printendclean
 
 re: fclean all
+
+#----------------------------------------------------------------------------
 
 # Règle d'affichage
 printhader: 

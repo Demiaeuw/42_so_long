@@ -7,7 +7,24 @@ Fait :
 
 
 A faire :
+	Gestion d'erreur :	-> Check des arguments .ber
+				-> Fichier existe ?
+				-> Free 
+				-> Fonction d'erreur
 
+
+	Parsing de map (gnl):	-> Verifier leak GNL.
+				-> Check si norme (1 C 0 E P).
+				-> Un seul P.
+				-> Un seul E.
+				-> Minimum un C.
+				-> Check si rectangulaire.
+				-> Check des mur exterieur.
+				-> Map réalisable (dfs).
+
+	trouver / faire sprite	->
+
+	ajout MLX		->
 
 
 

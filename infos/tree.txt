@@ -1,2 +1,10 @@
 srcs
-	??
+	00_erreur 	
+			erreur00 ->
+			erreur01 ->
+	01_arguments
+			argument00 -> 
+	02_map
+			map00 ->
+	utils		
+			

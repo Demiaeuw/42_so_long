@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   argument_00.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 14:36:53 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/12 14:36:53 by acabarba         ###   ########.fr       */
+/*   Created: 2024/04/12 15:09:20 by acabarba          #+#    #+#             */
+/*   Updated: 2024/04/12 15:09:20 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/so_long.h"
+#include "../../include/so_long.h"
 
-int	main(void)
+int	main_argument(int ac, char **av)
 {
-	ft_printf("helloWorld\n");
+	// check nombre d'argument.
+	// check si argument existe.
+	// check si .ber.
 }
