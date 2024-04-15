@@ -12,6 +12,13 @@
 
 #include "../../include/so_long.h"
 
+void	errormapcall(void (*f)(), t_map *map)
+{
+	f();
+	free_map(map);
+	exit(EXIT_FAILURE);
+}
+
 void	errormapcontent(void)
 {
 	ft_putendl_fd("\n", 1);
@@ -26,7 +33,7 @@ void	errormapplayer(void)
 	ft_putendl_fd("\n", 1);
 	ft_putendl_fd("Erreur", 1);
 	ft_putendl_fd("\n", 1);
-	ft_putendl_fd("La map contient plusieurs playeur ou 0", 1);
+	ft_putendl_fd("La map ne contient pas un seul PLAYER", 1);
 	ft_putendl_fd("\n", 1);
 }
 
@@ -35,7 +42,7 @@ void	errormapexit(void)
 	ft_putendl_fd("\n", 1);
 	ft_putendl_fd("Erreur", 1);
 	ft_putendl_fd("\n", 1);
-	ft_putendl_fd("La map contient plusieurs exit ou 0", 1);
+	ft_putendl_fd("La map ne contient pas une seule EXIT", 1);
 	ft_putendl_fd("\n", 1);
 }
 

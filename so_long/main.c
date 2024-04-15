@@ -16,10 +16,21 @@ int	main(int ac, char **av)
 {
 	t_map *map;
 
-	if (!main_argument(ac, av))
-		return (0);
+	// init map
 	map = init_map();
+	//
+
+	if (!main_argument(ac, av))
+	{
+		free_map(map);
+		return (0);
+	}
 	main_map(ac, av, map);
+
+	// free 
 	free_map(map);
+	//
+	ft_printf("\n\nAll good\n\n");
 	return (0);
 }
+

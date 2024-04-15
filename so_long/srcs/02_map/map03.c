@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free00.c                                           :+:      :+:    :+:   */
+/*   map03.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 16:46:35 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/15 16:46:35 by acabarba         ###   ########.fr       */
+/*   Created: 2024/04/15 22:46:32 by acabarba          #+#    #+#             */
+/*   Updated: 2024/04/15 22:46:32 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-void	liberer_str_tab(char **str)
+void	check_collectible(t_map *map)
 {
 	int	i;
+	int	j;
+	int	count_c;
 
+
+	count_c = 0;
 	i = 0;
-	while (str[i])
+	while (map->tab[i])
 	{
-		liberer_str(str[i]);
+		j = 0;
+		while (map->tab[i][j])
+		{
+			if (map->tab[i][j] == COLLECT)
+				count_c++;
+			j++;
+		}
 		i++;
 	}
-	free(str);
+	if (count_c < 1)
+		errormapcall(errormapcollect, map);
+	return ;
 }
-

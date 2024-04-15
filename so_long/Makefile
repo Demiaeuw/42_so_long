@@ -9,9 +9,12 @@ SRCS =	main.c\
 	srcs/01_argument/argument00.c\
 	srcs/01_argument/argument01.c\
 	srcs/02_map/map00.c\
-	srcs/02_map/map01.c
+	srcs/02_map/map01.c\
+	srcs/02_map/map02.c\
+	srcs/02_map/map03.c
 
-UTILS =	srcs/utils/utils_so_long/ft_putendl_fd.c\
+UTILS =	srcs/utils/utils_so_long/ft_printmap.c\
+	srcs/utils/utils_so_long/ft_putendl_fd.c\
 	srcs/utils/utils_so_long/ft_strcmpend.c
 
 OTHER =	srcs/utils/ft_printf/ft_printf00.c\

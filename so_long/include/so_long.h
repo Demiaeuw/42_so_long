@@ -20,6 +20,12 @@
 # include <string.h>
 # include <stdarg.h>
 
+# define WALL '1'
+# define GROUND '0'
+# define PLAYER 'P'
+# define EXIT 'E'
+# define COLLECT 'C'
+
 typedef struct s_map
 {
 	int		height;
@@ -37,11 +43,15 @@ int		main(int ac, char **av);
 void	errorargc(void);
 void	errorber(void);
 void	errorfileexist(void);
+void	errormapcall(void (*f)(), t_map *map);
 void	errormapcontent(void);
 void	errormapplayer(void);
 void	errormapexit(void);
 void	errormapempty(void);
-void	errormalloc(void);
+void	errormaptaille(void);
+void	errormaprectangle(void);
+void	errormapwall(void);
+void	errormapcollect(void);
 void	liberer_str_tab(char **str);
 
 /*			ARGUMENT		*/
@@ -55,15 +65,20 @@ int		check_file_empty(char *filename);
 void	main_map(int ac, char **av, t_map *map);
 t_map	*init_map(void);
 void	free_map(t_map *map);
-void	main_map_add(char *filename, t_map *map);
-void	add_map(char *filename, t_map *map);
 void	add_hight(char *filename, t_map *map);
 void	add_with(char *filename, t_map *map);
 void	add_malloc_tab(t_map *map);
-
+void	add_map(char *filename, t_map *map);;
+void	main_map_check(t_map *map);
+void	check_content(t_map *map);
+void	check_rectangle(t_map *map);
+void	check_wall(t_map *map);
+void	check_playerandexit(t_map *map);
+void	check_collectible(t_map *map);
 
 /*			UTILS			*/
 // so_long
+void	print_map(t_map *map);
 int		ft_strcmpend(char *str, char *src);
 void	ft_putendl_fd(char *s, int fd);
 

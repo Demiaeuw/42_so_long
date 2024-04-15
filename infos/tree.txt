@@ -9,13 +9,14 @@ srcs
 	00_erreur 	
 			erreur00 -> Gestion des erreurs argument01.
 			erreur01 -> Erreur de map.
-			erreur02 -> Erreur malloc.
+			erreur02 -> Erreur de map 2.
 	01_arguments
 			argument00 -> Main pour toutes la gestion des arguments.
 			argument01 -> Gestion bonne saisie / .ber / existe.
 	02_map
-			map00 -> Init et free t_map.
-			map01 -> Création du tableau de tableau.
+			map00	-> Main init et free t_map.
+			map01	-> Création du tableau de tableau et remplissage.
+			map02	-> Check des regles de map
 	utils		
 			ft_printf	-> Fichiers pour l'utilisation de ft_printf
 			utils_so_long	-> Fichiers pour les fonctions dedié a so_long

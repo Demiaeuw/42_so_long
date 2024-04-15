@@ -15,7 +15,18 @@
 void	main_map(int ac, char **av, t_map *map)
 {
 	(void)ac;
-	main_map_add(av[1], map);
+	add_hight(av[1], map);
+	add_with(av[1], map);
+	add_malloc_tab(map);
+	add_map(av[1], map);
+
+	// //
+	// print_map(map);
+	// ft_printf("\nhauteur : %d\n", map->height);
+	// ft_printf("largeur : %d\n\n", map->width);
+	// //
+
+	main_map_check(map);
 }
 
 t_map	*init_map(void)
@@ -25,8 +36,8 @@ t_map	*init_map(void)
 	map = malloc(sizeof(t_map));
 	if (map == NULL)
 	{
-		errormalloc();
-		return (NULL);
+		perror("Erreur d'allocation de mémoire");
+		exit(EXIT_FAILURE);
 	}
 	map->height = 0;
 	map->width = 0;

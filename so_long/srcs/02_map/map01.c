@@ -12,40 +12,6 @@
 
 #include "../../include/so_long.h"
 
-void	main_map_add(char *filename, t_map *map)
-{
-	add_hight(filename, map);
-	add_with(filename, map);
-	add_malloc_tab(map);
-	add_map(filename, map);
-	return ;
-}
-
-void	add_map(char *filename, t_map *map)
-{
-	char	c;
-	int		fd;
-	int		i;
-	int		k;
-
-	i = 0;
-	k = 0;
-	fd = open(filename, O_RDONLY);
-	while (read(fd, &c, 1) > 0)
-	{
-		while (c != '\n')
-		{
-			map->tab[i][k] = c;
-			k++;
-		}
-		map->tab[i][k] = '\n';
-		k = 0;
-		i++;
-	}
-	close(fd);
-	return ;
-}
-
 void	add_hight(char *filename, t_map *map)
 {
 	char	c;
@@ -54,14 +20,18 @@ void	add_hight(char *filename, t_map *map)
 
 	count = 0;
 	fd = open(filename, O_RDONLY);
+	if (fd == -1)
+	{
+		perror("Erreur d'ouverture du fichier");
+		exit(EXIT_FAILURE);
+	}
 	while (read(fd, &c, 1) > 0)
 	{
-		while (c == '\n')
+		if (c == '\n')
 			count++;
 	}
 	map->height = count;
 	close(fd);
-	return ;
 }
 
 void	add_with(char *filename, t_map *map)
@@ -72,41 +42,70 @@ void	add_with(char *filename, t_map *map)
 
 	count = 0;
 	fd = open(filename, O_RDONLY);
+	if (fd == -1)
+	{
+		perror("Erreur d'ouverture du fichier");
+		exit(EXIT_FAILURE);
+	}
 	while (read(fd, &c, 1) > 0)
 	{
-		while (c != '\n')
-		{
-			count++;
-			break ;
-		}
-		break ;
+		if (c == '\n')
+			break;
+		count++;
 	}
-	count++;
 	map->width = count;
 	close(fd);
-	return ;	
 }
 
 void	add_malloc_tab(t_map *map)
 {
 	int	i;
 
-	i = 0;
-	map->tab = malloc(sizeof(char *) * map->height);
+	map->tab = malloc(sizeof(char *) * map->height + 1);
 	if (map->tab == NULL)
 	{
-		errormalloc();
-		return ;
+		perror("Erreur d'allocation de mémoire");
+		exit(EXIT_FAILURE);
 	}
+	map->tab[map->height] = (NULL);
+	i = 0;
 	while (i < map->height)
 	{
-		map->tab[i] = malloc(sizeof(char) * (map->width +1));
+		map->tab[i] = malloc(sizeof(char) * (map->width + 1));
 		if (map->tab[i] == NULL)
 		{
-			errormalloc();
-			return ;
+			perror("Erreur d'allocation de mémoire");
+			exit(EXIT_FAILURE);
 		}
 		i++;
 	}
-	return ;
+}
+
+void	add_map(char *filename, t_map *map)
+{
+	char	c;
+	int		fd;
+	int		i;
+	int		k;
+
+	fd = open(filename, O_RDONLY);
+	if (fd == -1)
+	{
+		perror("Erreur d'ouverture du fichier");
+		exit(EXIT_FAILURE);
+	}
+	i = 0;
+	while (read(fd, &c, 1) > 0)
+	{
+		k = 0;
+		while (c != '\n')
+		{
+			map->tab[i][k] = c;
+			k++;
+			read(fd, &c, 1);
+		}
+		map->tab[i][k] = '\0';
+		i++;
+	}
+	close(fd);
 }
