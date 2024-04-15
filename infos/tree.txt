@@ -1,10 +1,22 @@
+include
+	Les includes.
+
+maps
+	Toutes les maps.
+			vide.ber ->  Map vide.
+
 srcs
 	00_erreur 	
-			erreur00 ->
+			erreur00 -> Gestion des erreurs argument01.
 			erreur01 ->
 	01_arguments
-			argument00 -> 
+			argument00 -> Main pour toutes la gestion des arguments.
+			argument01 -> Gestion bonne saisie / .ber / existe.
+			argument02 -> Création du tableau de tableau + check.
+			argument03 -> Check du tableau.
 	02_map
 			map00 ->
 	utils		
-			
+			ft_printf	-> Fichiers pour l'utilisation de ft_printf
+			utils_so_long	-> Fichiers pour les fonctions dedié a so_long
+		

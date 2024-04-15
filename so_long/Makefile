@@ -2,9 +2,15 @@
 NAME = so_long
 
 # Fichiers source
-SRCS =	main.c
+SRCS =	main.c\
+	srcs/00_erreur/erreur00.c\
+	srcs/00_erreur/erreur01.c\
+	srcs/01_argument/argument00.c\
+	srcs/01_argument/argument01.c\
+	srcs/01_argument/argument02.c
 
-UTILS =	
+UTILS =	srcs/utils/utils_so_long/ft_putendl_fd.c\
+	srcs/utils/utils_so_long/ft_strcmpend.c
 
 OTHER =	srcs/utils/ft_printf/ft_printf00.c\
 	srcs/utils/ft_printf/ft_printf01.c\

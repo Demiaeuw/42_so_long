@@ -1,22 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strcmpend.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 14:36:53 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/12 14:36:53 by acabarba         ###   ########.fr       */
+/*   Created: 2024/04/15 12:38:15 by acabarba          #+#    #+#             */
+/*   Updated: 2024/04/15 12:38:15 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/so_long.h"
+#include "../../../include/so_long.h"
 
-int	main(int ac, char **av)
+
+static int	checksrc(char *str)
 {
-	if (!main_argument(ac, av))
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	if (i != 4)
 		return (0);
-	//
-	ft_printf("\n\n\n");
-	ft_printf("helloWorld\n");
+	return (1);
+}
+
+int	ft_strcmpend(char *str, char *src)
+{
+	int	i;
+	int	j;
+
+	if (!checksrc(src))
+		return (0);
+	i = 0;
+	j = 0;
+	while (str[i])
+		i++;
+	i -= 4;
+	while (str[i])
+	{
+		if (str[i] != src[j])
+			return (0);
+		i++;
+		j++;
+	}
+	return (1);
+
 }

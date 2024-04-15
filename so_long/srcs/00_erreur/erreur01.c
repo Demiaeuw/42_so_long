@@ -1,47 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   erreur00.c                                         :+:      :+:    :+:   */
+/*   erreur01.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 15:05:26 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/12 15:05:26 by acabarba         ###   ########.fr       */
+/*   Created: 2024/04/15 14:29:52 by acabarba          #+#    #+#             */
+/*   Updated: 2024/04/15 14:29:52 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-void	errorargc(void)
+void	errormapcontent(void)
 {
 	ft_putendl_fd("\n", 1);
 	ft_putendl_fd("Erreur", 1);
 	ft_putendl_fd("\n", 1);
-	ft_putendl_fd("Veuillez a n'entrée que l'executable + nom de map", 1);
-	ft_putendl_fd("./so_long 'nom de map'", 1);
+	ft_putendl_fd("Probleme dans le contenue de la map", 1);
 	ft_putendl_fd("\n", 1);
-	return ;
 }
 
-void	errorber(void)
+void	errormapplayer(void)
 {
 	ft_putendl_fd("\n", 1);
 	ft_putendl_fd("Erreur", 1);
 	ft_putendl_fd("\n", 1);
-	ft_putendl_fd("Ce n'est pas un fichier.ber", 1);
-	ft_putendl_fd("./so_long maps/nom_du_fichier.ber", 1);
+	ft_putendl_fd("La map contient plusieurs playeur ou 0", 1);
 	ft_putendl_fd("\n", 1);
-	return ;
 }
 
-
-void	errorfileexist(void)
+void	errormapexit(void)
 {
 	ft_putendl_fd("\n", 1);
 	ft_putendl_fd("Erreur", 1);
 	ft_putendl_fd("\n", 1);
-	ft_putendl_fd("Ce fichier n'existe pas", 1);
-	ft_putendl_fd("./so_long maps/nom_du_fichier.ber", 1);
+	ft_putendl_fd("La map contient plusieurs exit ou 0", 1);
 	ft_putendl_fd("\n", 1);
-	return ;
+}
+
+void	errormapempty(void)
+{
+	ft_putendl_fd("\n", 1);
+	ft_putendl_fd("Erreur", 1);
+	ft_putendl_fd("\n", 1);
+	ft_putendl_fd("La map est vide", 1);
+	ft_putendl_fd("\n", 1);
 }

@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 14:36:53 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/12 14:36:53 by acabarba         ###   ########.fr       */
+/*   Created: 2024/04/15 12:54:32 by acabarba          #+#    #+#             */
+/*   Updated: 2024/04/15 12:54:32 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/so_long.h"
+#include "../../../include/so_long.h"
 
-int	main(int ac, char **av)
+
+void	ft_putendl_fd(char *s, int fd)
 {
-	if (!main_argument(ac, av))
-		return (0);
-	//
-	ft_printf("\n\n\n");
-	ft_printf("helloWorld\n");
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		write(fd, s + i, 1);
+		i++;
+	}
+	write(fd, "\n", 1);
 }
