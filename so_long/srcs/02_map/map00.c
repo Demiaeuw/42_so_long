@@ -14,6 +14,7 @@
 
 void	main_map(int ac, char **av, t_map *map)
 {
+	(void)ac;
 	main_map_add(av[1], map);
 }
 
@@ -25,7 +26,7 @@ t_map	*init_map(void)
 	if (map == NULL)
 	{
 		errormalloc();
-		return ;
+		return (NULL);
 	}
 	map->height = 0;
 	map->width = 0;

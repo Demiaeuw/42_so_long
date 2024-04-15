@@ -52,6 +52,7 @@ int		check_file_exist(char *filename);
 int		check_file_empty(char *filename);
 
 /*			MAP			*/
+void	main_map(int ac, char **av, t_map *map);
 t_map	*init_map(void);
 void	free_map(t_map *map);
 void	main_map_add(char *filename, t_map *map);
