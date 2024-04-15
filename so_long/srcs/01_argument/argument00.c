@@ -14,9 +14,7 @@
 
 int	main_argument(int ac, char **av)
 {
-	if (!argument_erreur(ac, av))
-		return (0);
-	if (!argument_parsing(av[1]))
+	if (!main_argument_erreur(ac, av))
 		return (0);
 	return (1);
 }

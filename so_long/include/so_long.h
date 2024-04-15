@@ -20,6 +20,18 @@
 # include <string.h>
 # include <stdarg.h>
 
+typedef struct s_map
+{
+	int		height;
+	int		width;
+	char	**tab;
+}	t_map;
+
+typedef struct s_so_long
+{
+	t_map	map;
+}	t_so_long;
+
 int		main(int ac, char **av);
 /*			ERROR			*/
 void	errorargc(void);
@@ -29,12 +41,25 @@ void	errormapcontent(void);
 void	errormapplayer(void);
 void	errormapexit(void);
 void	errormapempty(void);
+void	errormalloc(void);
+void	liberer_str_tab(char **str);
 
-/*			AGUMENT			*/
+/*			ARGUMENT		*/
 int		main_argument(int ac, char **av);
-int		argument_erreur(int ac, char **av);
+int		main_argument_erreur(int ac, char **av);
 int		check_ber(int ac, char **av);
 int		check_file_exist(char *filename);
+int		check_file_empty(char *filename);
+
+/*			MAP			*/
+t_map	*init_map(void);
+void	free_map(t_map *map);
+void	main_map_add(char *filename, t_map *map);
+void	add_map(char *filename, t_map *map);
+void	add_hight(char *filename, t_map *map);
+void	add_with(char *filename, t_map *map);
+void	add_malloc_tab(t_map *map);
+
 
 /*			UTILS			*/
 // so_long
@@ -55,6 +80,8 @@ int		ftp_putnbr(long long int n);
 int		ftp_put_u_nbr(unsigned int n);
 int		ftp_percent(void);
 
+
+//			TEST			//
 
 
 #endif

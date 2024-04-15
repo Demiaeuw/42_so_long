@@ -5,9 +5,11 @@ NAME = so_long
 SRCS =	main.c\
 	srcs/00_erreur/erreur00.c\
 	srcs/00_erreur/erreur01.c\
+	srcs/00_erreur/erreur02.c\
 	srcs/01_argument/argument00.c\
 	srcs/01_argument/argument01.c\
-	srcs/01_argument/argument02.c
+	srcs/02_map/map00.c\
+	srcs/02_map/map01.c
 
 UTILS =	srcs/utils/utils_so_long/ft_putendl_fd.c\
 	srcs/utils/utils_so_long/ft_strcmpend.c

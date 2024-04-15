@@ -12,7 +12,7 @@
 
 #include "../../include/so_long.h"
 
-int	argument_erreur(int ac, char **av)
+int	main_argument_erreur(int ac, char **av)
 {
 	if (ac != 2)
 	{
@@ -22,6 +22,8 @@ int	argument_erreur(int ac, char **av)
 	if (!check_ber(ac, av))
 		return (0);
 	if (!check_file_exist(av[1]))
+		return (0);
+	if (!check_file_empty(av[1]))
 		return (0);
 	return (1);
 }
@@ -45,6 +47,21 @@ int	check_file_exist(char *filename)
 	if (fd < 0)
 	{
 		errorfileexist();
+		return (0);
+	}
+	close(fd);
+	return (1);
+}
+
+int	check_file_empty(char *filename)
+{
+	int		fd;
+	char	c;
+
+	fd = open(filename, O_RDONLY);
+	if (read(fd, &c, 1) == 0)
+	{
+		errormapempty();
 		return (0);
 	}
 	close(fd);
