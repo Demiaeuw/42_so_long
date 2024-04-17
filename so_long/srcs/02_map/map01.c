@@ -89,7 +89,6 @@ void	add_map(char *filename, t_map *map)
 	int		k;
 	int		ret;
 
-	ft_printf("heignt : %d\nwidht : %d\n", map->height, map->width);
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 	{
