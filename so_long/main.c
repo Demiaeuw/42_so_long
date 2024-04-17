@@ -27,6 +27,13 @@ int	main(int ac, char **av)
 	}
 	main_map(ac, av, map);
 
+
+	// //
+	// print_map(map);
+	// ft_printf("\nhauteur : %d\nlargeur : %d\nNb collectible : %d", map->height, map-> width, map->collect);
+	// //
+
+
 	// free 
 	free_map(map);
 	//

@@ -34,5 +34,6 @@ void	check_collectible(t_map *map)
 	}
 	if (count_c < 1)
 		errormapcall(errormapcollect, map);
+	map->collect = count_c;
 	return ;
 }

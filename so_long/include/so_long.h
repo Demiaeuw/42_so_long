@@ -31,6 +31,7 @@ typedef struct s_map
 {
 	int		height;
 	int		width;
+	int		collect;
 	char	**tab;
 }	t_map;
 
