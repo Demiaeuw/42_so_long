@@ -30,3 +30,26 @@ void	print_map(t_map *map)
 		i++;
 	}
 }
+
+// void	print_map(t_map *map)
+// {
+// 	int	i;
+// 	int	j;
+
+// 	i = 0;
+// 	while (i < map->height)
+// 	{
+// 		j = 0;
+// 		while (j < map->width)
+// 		{
+// 			if (map->tab[i][j] == '\n' || map->tab[i][j] == '\t' || map->tab[i][j] == ' ')
+// 				ft_printf("&");
+// 			else
+// 				ft_printf("%c", map->tab[i][j]);
+// 			j++;
+// 		}
+// 		ft_printf("\n");
+// 		i++;
+// 	}
+// }
+

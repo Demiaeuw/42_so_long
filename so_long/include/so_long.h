@@ -23,7 +23,8 @@
 # define WALL '1'
 # define GROUND '0'
 # define PLAYER 'P'
-# define EXIT 'E'
+# define EXIT_CLOSED 'E'
+# define EXIT_OPEN 'O'
 # define COLLECT 'C'
 
 typedef struct s_map

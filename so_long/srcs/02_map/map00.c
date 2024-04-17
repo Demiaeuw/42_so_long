@@ -25,7 +25,6 @@ void	main_map(int ac, char **av, t_map *map)
 	// ft_printf("\nhauteur : %d\n", map->height);
 	// ft_printf("largeur : %d\n\n", map->width);
 	// //
-
 	main_map_check(map);
 }
 

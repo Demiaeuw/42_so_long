@@ -40,7 +40,7 @@ void	check_content(t_map *map)
 			if (map->tab[i][j] != WALL
 				&& map->tab[i][j] != GROUND
 				&& map->tab[i][j] != PLAYER
-				&& map->tab[i][j] != EXIT
+				&& map->tab[i][j] != EXIT_CLOSED
 				&& map->tab[i][j] != COLLECT
 				&& map->tab[i][j] != '\n'
 				&&  map->tab[i][j] != 13)
@@ -62,7 +62,7 @@ void	check_rectangle(t_map *map)
 	while (map->tab[i])
 	{
 		j = 0;
-		while (map->tab[i][j])
+		while (map->tab[i][j] && map->tab[i][j] != '\n' && map->tab[i][j] != '\r')
 			j++;
 		if (j != map->width)
 			errormapcall(errormaprectangle, map);
@@ -72,6 +72,7 @@ void	check_rectangle(t_map *map)
 		errormapcall(errormaprectangle, map);
 	return ;
 }
+
 
 void	check_wall(t_map *map)
 {
@@ -114,7 +115,7 @@ void	check_playerandexit(t_map *map)
 		j = 0;
 		while (map->tab[i][j])
 		{
-			if (map->tab[i][j] == EXIT)
+			if (map->tab[i][j] == EXIT_CLOSED)
 				count_e++;
 			if (map->tab[i][j] == PLAYER)
 				count_p++;

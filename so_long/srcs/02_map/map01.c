@@ -30,7 +30,7 @@ void	add_hight(char *filename, t_map *map)
 		if (c == '\n')
 			count++;
 	}
-	map->height = count;
+	map->height = count + 1;
 	close(fd);
 }
 
@@ -53,7 +53,7 @@ void	add_with(char *filename, t_map *map)
 			break;
 		count++;
 	}
-	map->width = count;
+	map->width = count - 1;
 	close(fd);
 }
 
@@ -67,7 +67,6 @@ void	add_malloc_tab(t_map *map)
 		perror("Erreur d'allocation de mémoire");
 		exit(EXIT_FAILURE);
 	}
-	map->tab[map->height] = (NULL);
 	i = 0;
 	while (i < map->height)
 	{
@@ -78,6 +77,7 @@ void	add_malloc_tab(t_map *map)
 			exit(EXIT_FAILURE);
 		}
 		i++;
+	map->tab[map->height] = (NULL);
 	}
 }
 
@@ -87,7 +87,9 @@ void	add_map(char *filename, t_map *map)
 	int		fd;
 	int		i;
 	int		k;
+	int		ret;
 
+	ft_printf("heignt : %d\nwidht : %d\n", map->height, map->width);
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 	{
@@ -95,17 +97,18 @@ void	add_map(char *filename, t_map *map)
 		exit(EXIT_FAILURE);
 	}
 	i = 0;
-	while (read(fd, &c, 1) > 0)
+	while ((ret = read(fd, &c, 1)) > 0)
 	{
 		k = 0;
-		while (c != '\n')
+		while (c != '\n' && ret > 0)
 		{
 			map->tab[i][k] = c;
 			k++;
-			read(fd, &c, 1);
+			ret = read(fd, &c, 1);
 		}
 		map->tab[i][k] = '\0';
 		i++;
 	}
 	close(fd);
 }
+
