@@ -11,7 +11,8 @@ SRCS =	main.c\
 	srcs/02_map/map00.c\
 	srcs/02_map/map01.c\
 	srcs/02_map/map02.c\
-	srcs/02_map/map03.c
+	srcs/02_map/map03.c\
+	srcs/03_window/init00.c
 
 UTILS =	srcs/utils/utils_so_long/ft_printmap.c\
 	srcs/utils/utils_so_long/ft_putendl_fd.c\
@@ -32,20 +33,24 @@ CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
 # Règle par défaut
-all: printhader printactionobj $(NAME) printactionobjok printend
-rapide: $(NAME)
+all: printhader printmakemlx makemlx printmakemlxok printactionobj $(NAME) printactionobjok printend
+rapide: makemlx $(NAME)
 
 # Règle pour créer l'exécutable
 $(NAME): $(OBJS) $(OBJSUTILS) $(OBJSOTHER)
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(OBJSUTILS) $(OBJSOTHER)
 
+makemlx: 
+	$(MAKE) -C minilibx-linux
 # Règle pour nettoyer les fichiers objets
 exe: all clean
 
-clean:
+clean:	
+	@make clean -sC minilibx-linux/
 	@$(RM) $(OBJS) $(OBJSUTILS) $(OBJSOTHER)
 
-fclean: clean
+fclean: clean 
+	@make fclean -sC minilibx-linux/
 	@$(RM) $(NAME)
 	@$(MAKE) printendclean
 
@@ -159,3 +164,21 @@ printendclean:
 	@sleep 0.1
 	@echo " "
 	@sleep 0.1
+
+printmakemlx:
+	@echo " "
+	@echo " "
+	@sleep 0.5
+	@echo "\033[97m   Compilation de\033[0m \033[38;5;208mla MinilibX\033[0m --> 💻"
+	@echo " "
+	@echo " "
+	@sleep 0.5
+
+printmakemlxok:
+	@echo " "
+	@echo " "
+	@sleep 0.5
+	@echo "   Compilation de \033[32mla MinilibX\033[0m --> ✅"
+	@echo " "
+	@echo " "
+	@sleep 0.5

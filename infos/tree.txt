@@ -16,7 +16,10 @@ srcs
 	02_map
 			map00	-> Main init et free t_map.
 			map01	-> Création du tableau de tableau et remplissage.
-			map02	-> Check des regles de map
+			map02	-> Check des regles de map.
+			map03	-> Check des regles de map.
+	03_window
+			init00		-> Initialisation de la window mlx
 	utils		
 			ft_printf	-> Fichiers pour l'utilisation de ft_printf
 			utils_so_long	-> Fichiers pour les fonctions dedié a so_long

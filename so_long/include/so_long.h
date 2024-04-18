@@ -19,6 +19,17 @@
 # include <fcntl.h>
 # include <string.h>
 # include <stdarg.h>
+# include "../minilibx-linux/mlx.h"
+
+# define KEY_ESC 65307
+# define KEY_Z 122
+# define KEY_Q 113
+# define KEY_S 115
+# define KEY_D 100
+# define KEY_UP 65362
+# define KEY_DOWN 65364
+# define KEY_RIGHT 65363
+# define KEY_LEFT 65361
 
 # define WALL '1'
 # define GROUND '0'
@@ -35,9 +46,21 @@ typedef struct s_map
 	char	**tab;
 }	t_map;
 
+typedef struct s_sprites
+{
+	void	*player;
+	void	*collectible;
+	void	*exit;
+	void	*ground;
+	void	*wall;
+}	t_sprites;
+
 typedef struct s_so_long
 {
-	t_map	map;
+	t_map		map;
+	t_sprites	sprite	;
+	void		*mlx;
+	void		*window;
 }	t_so_long;
 
 int		main(int ac, char **av);
@@ -77,6 +100,9 @@ void	check_rectangle(t_map *map);
 void	check_wall(t_map *map);
 void	check_playerandexit(t_map *map);
 void	check_collectible(t_map *map);
+/*			WINDOW			*/
+void	main_window(t_so_long *game);
+void	create_game_window(t_so_long *game);
 
 /*			UTILS			*/
 // so_long
