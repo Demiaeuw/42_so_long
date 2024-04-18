@@ -46,11 +46,10 @@ makemlx:
 exe: all clean
 
 clean:	
-	@make clean -sC minilibx-linux/
 	@$(RM) $(OBJS) $(OBJSUTILS) $(OBJSOTHER)
 
 fclean: clean 
-	@make fclean -sC minilibx-linux/
+	@$(MAKE) -C minilibx-linux/ clean
 	@$(RM) $(NAME)
 	@$(MAKE) printendclean
 
