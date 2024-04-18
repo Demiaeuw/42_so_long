@@ -14,28 +14,33 @@
 
 int	main(int ac, char **av)
 {
-	t_map *map;
+	t_so_long	*game;
 
 	// init map
-	map = init_map();
+	game->map = init_map();
 	//
 
 	if (!main_argument(ac, av))
 	{
-		free_map(map);
+		free_map(game->map);
 		return (0);
 	}
-	main_map(ac, av, map);
+	main_map(ac, av, game->map);
 
 
 	// //
-	// print_map(map);
-	// ft_printf("\nhauteur : %d\nlargeur : %d\nNb collectible : %d", map->height, map-> width, map->collect);
+	print_map(game->map);
+	ft_printf("\nhauteur : %d\nlargeur : %d\nNb collectible : %d", game->map->height, game->map-> width, game->map->collect);
 	// //
+
+	// 
+	// ft_printf("test ouverture window");
+	// main_window(game);
+	// 
 
 
 	// free 
-	free_map(map);
+	free_map(game->map);
 	//
 	ft_printf("\n\nAll good\n\n");
 	return (0);

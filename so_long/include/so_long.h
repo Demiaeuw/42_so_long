@@ -57,8 +57,8 @@ typedef struct s_sprites
 
 typedef struct s_so_long
 {
-	t_map		map;
-	t_sprites	sprite	;
+	t_map		*map;
+	t_sprites	*sprite	;
 	void		*mlx;
 	void		*window;
 }	t_so_long;
