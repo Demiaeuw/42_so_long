@@ -12,7 +12,6 @@
 
 #include "../../../include/so_long.h"
 
-
 static int	checksrc(char *str)
 {
 	int	i;
@@ -45,5 +44,4 @@ int	ft_strcmpend(char *str, char *src)
 		j++;
 	}
 	return (1);
-
 }

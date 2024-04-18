@@ -24,4 +24,3 @@ void	liberer_str_tab(char **str)
 	}
 	free(str);
 }
-

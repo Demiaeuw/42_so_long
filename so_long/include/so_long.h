@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONH_H
+#ifndef SO_LONG_H
 # define SO_LONG_H
 # include <unistd.h>
 # include <stdlib.h>
@@ -98,8 +98,6 @@ int		ftp_putnbr(long long int n);
 int		ftp_put_u_nbr(unsigned int n);
 int		ftp_percent(void);
 
-
 //			TEST			//
-
 
 #endif

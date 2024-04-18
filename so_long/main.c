@@ -40,4 +40,3 @@ int	main(int ac, char **av)
 	ft_printf("\n\nAll good\n\n");
 	return (0);
 }
-

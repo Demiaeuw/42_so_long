@@ -18,7 +18,6 @@ void	check_collectible(t_map *map)
 	int	j;
 	int	count_c;
 
-
 	count_c = 0;
 	i = 0;
 	while (map->tab[i])

@@ -50,7 +50,7 @@ void	add_with(char *filename, t_map *map)
 	while (read(fd, &c, 1) > 0)
 	{
 		if (c == '\n')
-			break;
+			break ;
 		count++;
 	}
 	map->width = count - 1;
@@ -77,7 +77,7 @@ void	add_malloc_tab(t_map *map)
 			exit(EXIT_FAILURE);
 		}
 		i++;
-	map->tab[map->height] = (NULL);
+		map->tab[map->height] = (NULL);
 	}
 }
 
@@ -110,4 +110,3 @@ void	add_map(char *filename, t_map *map)
 	}
 	close(fd);
 }
-

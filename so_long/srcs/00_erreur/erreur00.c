@@ -34,7 +34,6 @@ void	errorber(void)
 	return ;
 }
 
-
 void	errorfileexist(void)
 {
 	ft_putendl_fd("\n", 1);

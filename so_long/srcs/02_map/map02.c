@@ -43,7 +43,7 @@ void	check_content(t_map *map)
 				&& map->tab[i][j] != EXIT_CLOSED
 				&& map->tab[i][j] != COLLECT
 				&& map->tab[i][j] != '\n'
-				&&  map->tab[i][j] != 13)
+				&& map->tab[i][j] != 13)
 				errormapcall(errormapcontent, map);
 			j++;
 		}
@@ -62,7 +62,9 @@ void	check_rectangle(t_map *map)
 	while (map->tab[i])
 	{
 		j = 0;
-		while (map->tab[i][j] && map->tab[i][j] != '\n' && map->tab[i][j] != '\r')
+		while (map->tab[i][j]
+			&& map->tab[i][j] != '\n'
+			&& map->tab[i][j] != '\r')
 			j++;
 		if (j != map->width)
 			errormapcall(errormaprectangle, map);
@@ -72,7 +74,6 @@ void	check_rectangle(t_map *map)
 		errormapcall(errormaprectangle, map);
 	return ;
 }
-
 
 void	check_wall(t_map *map)
 {
@@ -85,7 +86,8 @@ void	check_wall(t_map *map)
 	{
 		if (map->tab[0][i] != WALL && map->tab[0][i] != '\r')
 			errormapcall(errormapwall, map);
-		if (map->tab[map->height - 1][i] != WALL && map->tab[map->height - 1][i] != '\r')
+		if (map->tab[map->height - 1][i] != WALL
+			&& map->tab[map->height - 1][i] != '\r')
 			errormapcall(errormapwall, map);
 		i++;
 	}
@@ -93,7 +95,8 @@ void	check_wall(t_map *map)
 	{
 		if (map->tab[j][0] != WALL && map->tab[j][0] != '\r')
 			errormapcall(errormapwall, map);
-		if (map->tab[j][map->width - 1] != WALL && map->tab[j][map->width - 1] != '\r')
+		if (map->tab[j][map->width - 1] != WALL
+			&& map->tab[j][map->width - 1] != '\r')
 			errormapcall(errormapwall, map);
 		j++;
 	}
