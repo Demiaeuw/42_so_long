@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:41:04 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/19 17:09:55 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/19 22:19:16 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void	liberer_str_tab(char **str);
 void	free_map(t_map *map);
 void	main_free(t_so_long **game);
 void	main_init(t_so_long **game);
-int		main_exit(t_so_long *game);
+int		main_exit_nowin(t_so_long *game);
 
 /*			ARGUMENT		*/
 int		main_argument(int ac, char **av);
@@ -127,7 +127,9 @@ void	sprite_in_window(t_so_long **game);
 void	window_refresh(t_so_long **g, int i, int j);
 void	printstartgame(void);
 void	printnbpas(t_so_long **game);
-void	printendgame(t_so_long **game);
+int	close_echap(int keycode, t_so_long *game);
+void	printendgamevalid(t_so_long **game);
+void	printendgameechec(void);
 
 /*			GAMEPLAY		*/
 

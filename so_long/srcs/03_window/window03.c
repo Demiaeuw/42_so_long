@@ -1,29 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init00.c                                           :+:      :+:    :+:   */
+/*   window03.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 16:16:53 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/19 22:21:15 by acabarba         ###   ########.fr       */
+/*   Created: 2024/04/19 22:23:44 by acabarba          #+#    #+#             */
+/*   Updated: 2024/04/19 22:23:51 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-void	main_init(t_so_long **game)
-{
-	*game = malloc(sizeof(t_so_long));
-	(*game)->map = init_map();
-	(*game)->mlx = mlx_init();
-	(*game)->sprite = malloc(sizeof(t_sprites));
-	(*game)->nb_pas = 0;
-}
-
-int	main_exit_nowin(t_so_long *game)
-{
-	printendgameechec();
-	main_free(&game);
-	return (0);
-}

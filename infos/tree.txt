@@ -25,7 +25,8 @@ srcs
 	03_window
 			window00	-> Initialisation de la window mlx.
 			window01	-> Ajout des sprites sur la window + refresh.
-			window02	-> Affichage terminal.
+			window02	-> Affichage terminal et echap exit.
+			window03	-> Blocage de la fenetre ??
 	04_gameplay
 			gameplay00	-> 
 

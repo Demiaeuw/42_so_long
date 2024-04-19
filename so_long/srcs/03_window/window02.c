@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:49:42 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/19 17:09:02 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/19 22:21:15 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,28 @@ void	printnbpas(t_so_long **game)
 	ft_printf("Nombre de pas : %d\n", (*game)->nb_pas);
 }
 
-void	printendgame(t_so_long **game)
+int	close_echap(int keycode, t_so_long *game)
+{
+	if (keycode == 65307)
+	{
+		printendgameechec();
+		main_free(&game);
+		exit(0);
+	}
+	return (0);
+}
+
+void	printendgamevalid(t_so_long **game)
 {
 	ft_printf("\n\n");
 	ft_printf("Vous avez fini le niveau en : %d mouvments\n",
 		(*game)->nb_pas);
 	ft_printf("\n\n");
 	ft_printf("Merci D'avoir joué !\n\n");
+}
+
+void	printendgameechec(void)
+{
+	ft_printf("\n\n");
+	ft_printf("Merci D'avoir joué !\n\n");	
 }

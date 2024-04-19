@@ -41,4 +41,6 @@ A faire :
 				-> Verifer les fonctions autorisé.		-
 				-> Verifier les leaks.				-
 				-> verifier les commentaires.			-
+				
 Divers :
+	- Manque 1 free quand fermeture par echap ou croix.
