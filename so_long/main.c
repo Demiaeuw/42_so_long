@@ -16,12 +16,7 @@ int	main(int ac, char **av)
 {
 	t_so_long	*game;
 
-	
-	// init
-	game = malloc(sizeof(t_so_long));
-	game->map = init_map();
-	//
-
+	main_init(&game);
 	if (!main_argument(ac, av))
 	{
 		free_map(game->map);
@@ -32,18 +27,25 @@ int	main(int ac, char **av)
 	// //
 	print_map(game->map);
 	ft_printf("\nhauteur : %d\nlargeur : %d\nNb collectible : %d\n", game->map->height, game->map-> width, game->map->collect);
+	ft_printf("\ntest ouverture window\n");
 	// //
 
-
-	
-	ft_printf("test ouverture window");
 	main_window(game);
-	
-
-
-	// free 
-	free_map(game->map);
-	//
+	mlx_loop(game->mlx);
+	main_free(&game);
 	ft_printf("\n\nAll good\n\n");
 	return (0);
+}
+
+void	main_init(t_so_long **game)
+{
+	*game = malloc(sizeof(t_so_long));
+	(*game)->map = init_map();
+	(*game)->mlx = mlx_init();
+}
+
+void	main_free(t_so_long **game)
+{
+	free_map((*game)->map);
+	free(*game);
 }

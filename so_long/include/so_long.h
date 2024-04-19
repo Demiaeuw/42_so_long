@@ -67,6 +67,9 @@ typedef struct s_so_long
 }	t_so_long;
 
 int		main(int ac, char **av);
+void	main_init(t_so_long **game);
+void	main_free(t_so_long **game);
+
 /*			ERROR			*/
 void	errorargc(void);
 void	errorber(void);

@@ -19,10 +19,10 @@ void	main_window(t_so_long *game)
 
 void	create_game_window(t_so_long *game)
 {
-	// if (game->mlx == NULL)
-	// 	return ;
+	if (game->mlx == NULL)
+		return ;
 	game->window = mlx_new_window(game->mlx, game->map->width * 96,
-			game->map->height * 96, "So_long");
+			game->map->height * 96, "So_long ACABARBA");
 	if (game->window == NULL)
 	{
 		free(game->mlx);

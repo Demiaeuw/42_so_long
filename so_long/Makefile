@@ -31,17 +31,20 @@ OBJSOTHER = $(OTHER:.c=.o)
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
+MLX_FILES = minilibx-linux/libmlx.a
+MLX_FLAGS = -Lminilibx-linux -lmlx -L/usr/lib/X11 -lXext -lX11
 
 # Règle par défaut
 all: printhader printmakemlx makemlx printmakemlxok printactionobj $(NAME) printactionobjok printend
 rapide: makemlx $(NAME)
 
 # Règle pour créer l'exécutable
-$(NAME): $(OBJS) $(OBJSUTILS) $(OBJSOTHER)
-	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(OBJSUTILS) $(OBJSOTHER)
+$(NAME): $(OBJS) $(OBJSUTILS) $(OBJSOTHER) $(MLX_FILES)
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(OBJSUTILS) $(OBJSOTHER) $(MLX_FLAGS) $(MLX_FILES) 
 
 makemlx: 
 	$(MAKE) -C minilibx-linux
+
 # Règle pour nettoyer les fichiers objets
 exe: all clean
 
