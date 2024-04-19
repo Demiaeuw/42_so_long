@@ -3,16 +3,20 @@ NAME = so_long
 
 # Fichiers source
 SRCS =	main.c\
+	main_utils.c\
 	srcs/00_erreur/erreur00.c\
 	srcs/00_erreur/erreur01.c\
 	srcs/00_erreur/erreur02.c\
+	srcs/00_erreur/erreur03.c\
+	srcs/00_erreur/free00.c\
 	srcs/01_argument/argument00.c\
 	srcs/01_argument/argument01.c\
 	srcs/02_map/map00.c\
 	srcs/02_map/map01.c\
 	srcs/02_map/map02.c\
 	srcs/02_map/map03.c\
-	srcs/03_window/init00.c
+	srcs/03_window/window00.c\
+	srcs/03_window/window01.c
 
 UTILS =	srcs/utils/utils_so_long/ft_printmap.c\
 	srcs/utils/utils_so_long/ft_putendl_fd.c\

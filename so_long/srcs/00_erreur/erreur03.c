@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init00.c                                           :+:      :+:    :+:   */
+/*   erreur03.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 15:17:40 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/18 17:33:08 by acabarba         ###   ########.fr       */
+/*   Created: 2024/04/19 13:53:03 by acabarba          #+#    #+#             */
+/*   Updated: 2024/04/19 14:32:06 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-void	main_window(t_so_long *game)
+void	errormlxcall(void (*f)(), t_so_long *game)
 {
-	create_game_window(game);
+	f();
+	main_free(&game);
+	exit(EXIT_FAILURE);
 }
 
-void	create_game_window(t_so_long *game)
+void	errormlxsprite(void)
 {
-	if (game->mlx == NULL)
-		return ;
-	game->window = mlx_new_window(game->mlx, game->map->width * 96,
-			game->map->height * 96, "So_long ACABARBA");
-	if (game->window == NULL)
-	{
-		free(game->mlx);
-		return ;
-	}
+	ft_putendl_fd("\n", 1);
+	ft_putendl_fd("Erreur", 1);
+	ft_putendl_fd("\n", 1);
+	ft_putendl_fd("Probleme de chargement de SPRITE", 1);
+	ft_putendl_fd("\n", 1);
 }
