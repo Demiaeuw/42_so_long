@@ -1,34 +1,41 @@
 Fait :
+	Gestion d'erreur :	-> Check des arguments .ber			ok
+				-> Fichier existe ?				ok
+				-> Free 					ok
+				-> Fonction d'erreur				ok
 
-
-
-
-
+	trouver / faire sprite	-> WALL.					ok
+				-> PLAYER.					ok
+				-> COLLECT.					ok
+				-> EXIT_OPEN.					ok
+				-> EXIT_CLOSED.					ok
+				-> GROUND.					ok
 
 
 A faire :
-	Gestion d'erreur :	-> Check des arguments .ber
-				-> Fichier existe ?
-				-> Free 
-				-> Fonction d'erreur
 
 
-	Parsing de map (gnl):	-> Verifier leak GNL.
-				-> Check si norme (1 C 0 E P).
-				-> Un seul P.
-				-> Un seul E.
-				-> Minimum un C.
-				-> Check si rectangulaire.
-				-> Check des mur exterieur.
-				-> Map réalisable (dfs).
-
-	trouver / faire sprite	->
-
-	ajout MLX		->
+	Parsing de map :	-> Check si norme (1 C 0 E P).			ok
+				-> Un seul P.					ok
+				-> Un seul E.					ok
+				-> Minimum un C.				ok
+				-> Check si rectangulaire.			ok
+				-> Check des mur exterieur.			ok
+				-> Map réalisable (dfs).			-
 
 
+	ajout MLX		-> Ouvrir un fenetre.				ok
+				-> Bloquer la fenetre (format).			-
+				-> Refresh fenetre.				ok
+				-> Fermer la fenetre proprement.		-
 
-
+				-> Faire les mouvements.			-
+				-> Mouvement PLAYER.				-
+				-> Compteur de pas.				-
+				-> Ne pas traverser WALL.			-
+				-> Compteur COLLECT.				-
+				-> Changement EXIT_CLOSED to EXIT_OPEN.		-
+				-> Ouvrir la sortie.				-
 
 
 Divers :

@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 20:23:01 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/15 20:23:01 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/19 16:02:06 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,10 @@
 
 void	main_map_check(t_map *map)
 {
-	// check si que des charactere autorise.
 	check_content(map);
-	// check si rectangle.
 	check_rectangle(map);
-	// check si entouré de 1 (mur).
 	check_wall(map);
-	// check si un seul P et E.
 	check_playerandexit(map);
-	// check si au moins 1 C.
 	check_collectible(map);
 }
 

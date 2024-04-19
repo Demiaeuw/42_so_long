@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:17:40 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/19 14:56:11 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/19 16:22:01 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,25 +39,25 @@ void	init_sprites(t_so_long **game)
 	(*game)->sprite->player = mlx_xpm_file_to_image((*game)->mlx,
 			"./sprite/PLAYER.xpm", &size, &size);
 	if ((*game)->sprite->player == NULL)
-		errormlxcall(errormlxsprite, (*game));
+		errormlxcall(errormlxspriteplayer, (*game));
 	(*game)->sprite->exit_closed = mlx_xpm_file_to_image((*game)->mlx,
 			"./sprite/EXIT_CLOSED.xpm", &size, &size);
 	if ((*game)->sprite->exit_closed == NULL)
-		errormlxcall(errormlxsprite, (*game));
+		errormlxcall(errormlxspriteexitclosed, (*game));
 	(*game)->sprite->exit_open = mlx_xpm_file_to_image((*game)->mlx,
 			"./sprite/EXIT_OPEN.xpm", &size, &size);
 	if ((*game)->sprite->exit_open == NULL)
-		errormlxcall(errormlxsprite, (*game));
+		errormlxcall(errormlxspriteexitopen, (*game));
 	(*game)->sprite->collectible = mlx_xpm_file_to_image((*game)->mlx,
 			"./sprite/COLLECT_sword.xpm", &size, &size);
 	if ((*game)->sprite->collectible == NULL)
-		errormlxcall(errormlxsprite, (*game));
+		errormlxcall(errormlxspritecollect, (*game));
 	(*game)->sprite->wall = mlx_xpm_file_to_image((*game)->mlx,
 			"./sprite/WALL.xpm", &size, &size);
 	if ((*game)->sprite->wall == NULL)
-		errormlxcall(errormlxsprite, (*game));
+		errormlxcall(errormlxspritewall, (*game));
 	(*game)->sprite->ground = mlx_xpm_file_to_image((*game)->mlx,
 			"./sprite/GROUND.xpm", &size, &size);
 	if ((*game)->sprite->ground == NULL)
-		errormlxcall(errormlxsprite, (*game));
+		errormlxcall(errormlxspriteground, (*game));
 }

@@ -7,9 +7,13 @@ maps
 
 srcs
 	00_erreur 	
-			erreur00 -> Gestion des erreurs argument01.
-			erreur01 -> Erreur de map.
-			erreur02 -> Erreur de map 2.
+			erreur00 	-> Gestion des erreurs argument01.
+			erreur01 	> Erreur de map.
+			erreur02 	-> Erreur de map 2.
+			erreur03 	-> Erreur de chargement de Sprite.
+			erreur04 	-> Erreur de chargement de Sprite 2.
+			free00		-> Fonction de base pour free.
+			init00		-> Fonction d'initialisation et des exits.
 	01_arguments
 			argument00 -> Main pour toutes la gestion des arguments.
 			argument01 -> Gestion bonne saisie / .ber / existe.
@@ -21,6 +25,8 @@ srcs
 	03_window
 			window00	-> Initialisation de la window mlx.
 			window01	-> Ajout des sprites sur la window + refresh.
+	04_gameplay
+			gameplay00	-> 
 
 	utils		
 			ft_printf	-> Fichiers pour l'utilisation de ft_printf
@@ -28,5 +34,3 @@ srcs
 		
 main
 	-> Ma fonction main.
-main_utils
-	-> Main init, main free, main exit.

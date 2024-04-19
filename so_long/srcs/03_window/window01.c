@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 13:45:17 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/19 14:26:19 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/19 16:03:42 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,15 @@ void	window_refresh(t_so_long **g, int i, int j)
 		mlx_put_image_to_window((*g)->mlx, (*g)->window,
 			(*g)->sprite->collectible, j * 96, i * 96);
 	else if ((*g)->map->tab[i][j] == EXIT_CLOSED)
-		mlx_put_image_to_window((*g)->mlx, (*g)->window, (*g)->sprite->exit_closed, j
-			* 96, i * 96);
+		mlx_put_image_to_window((*g)->mlx, (*g)->window,
+			(*g)->sprite->exit_closed, j * 96, i * 96);
 	else if ((*g)->map->tab[i][j] == EXIT_OPEN)
-		mlx_put_image_to_window((*g)->mlx, (*g)->window, (*g)->sprite->exit_open, j
-			* 96, i * 96);
+		mlx_put_image_to_window((*g)->mlx, (*g)->window,
+			(*g)->sprite->exit_open, j * 96, i * 96);
 	else if ((*g)->map->tab[i][j] == PLAYER)
-		mlx_put_image_to_window((*g)->mlx, (*g)->window, (*g)->sprite->player, j
-			* 96, i * 96);
+		mlx_put_image_to_window((*g)->mlx, (*g)->window,
+			(*g)->sprite->player, j * 96, i * 96);
 	else if ((*g)->map->tab[i][j] == GROUND)
-		mlx_put_image_to_window((*g)->mlx, (*g)->window, (*g)->sprite->ground, j
-			* 96, i * 96);
+		mlx_put_image_to_window((*g)->mlx, (*g)->window,
+			(*g)->sprite->ground, j * 96, i * 96);
 }
