@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:41:04 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/19 16:19:16 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/19 16:39:44 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,8 +118,8 @@ void	check_wall(t_map *map);
 void	check_playerandexit(t_map *map);
 void	check_collectible(t_map *map);
 /*			WINDOW			*/
-void	main_window_init(t_so_long *game);
-void	create_game_window(t_so_long *game);
+void	main_window_init(t_so_long **game);
+void	create_game_window(t_so_long **game);
 void	init_sprites(t_so_long **game);
 void	sprite_in_window(t_so_long **game);
 void	window_refresh(t_so_long **g, int i, int j);

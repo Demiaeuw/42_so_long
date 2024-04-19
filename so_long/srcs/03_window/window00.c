@@ -6,27 +6,27 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:17:40 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/19 16:22:01 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/19 16:41:45 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-void	main_window_init(t_so_long *game)
+void	main_window_init(t_so_long **game)
 {
-	init_sprites(&game);
+	init_sprites(game);
 	create_game_window(game);
 }
 
-void	create_game_window(t_so_long *game)
+void	create_game_window(t_so_long **game)
 {
-	if (game->mlx == NULL)
+	if ((*game)->mlx == NULL)
 		return ;
-	game->window = mlx_new_window(game->mlx, game->map->width * 96,
-			game->map->height * 96, "So_long ACABARBA");
-	if (game->window == NULL)
+	(*game)->window = mlx_new_window((*game)->mlx, (*game)->map->width * 96,
+			(*game)->map->height * 96, "So_long ACABARBA");
+	if ((*game)->window == NULL)
 	{
-		free(game->mlx);
+		free((*game)->mlx);
 		return ;
 	}
 }
