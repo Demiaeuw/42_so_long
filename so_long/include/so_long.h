@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:41:04 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/12 14:41:04 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/19 10:26:52 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@
 # include <fcntl.h>
 # include <string.h>
 # include <stdarg.h>
+
 # include "../minilibx-linux/mlx.h"
+# include <X11/X.h>
+# include <X11/keysym.h>
 
 # define KEY_ESC 65307
 # define KEY_Z 122

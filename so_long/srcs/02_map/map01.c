@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:18:20 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/15 17:18:20 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/18 17:28:57 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	add_with(char *filename, t_map *map)
 			break ;
 		count++;
 	}
-	map->width = count - 1;
+	map->width = count;
 	close(fd);
 }
 

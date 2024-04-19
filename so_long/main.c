@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:36:53 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/12 14:36:53 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/18 17:30:13 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ int	main(int ac, char **av)
 {
 	t_so_long	*game;
 
-	// init map
+	
+	// init
+	game = malloc(sizeof(t_so_long));
 	game->map = init_map();
 	//
 
@@ -27,16 +29,16 @@ int	main(int ac, char **av)
 	}
 	main_map(ac, av, game->map);
 
-
 	// //
 	print_map(game->map);
-	ft_printf("\nhauteur : %d\nlargeur : %d\nNb collectible : %d", game->map->height, game->map-> width, game->map->collect);
+	ft_printf("\nhauteur : %d\nlargeur : %d\nNb collectible : %d\n", game->map->height, game->map-> width, game->map->collect);
 	// //
 
-	// 
-	// ft_printf("test ouverture window");
-	// main_window(game);
-	// 
+
+	
+	ft_printf("test ouverture window");
+	main_window(game);
+	
 
 
 	// free 
