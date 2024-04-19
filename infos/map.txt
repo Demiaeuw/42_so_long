@@ -37,5 +37,8 @@ A faire :
 				-> Changement EXIT_CLOSED to EXIT_OPEN.		-
 				-> Ouvrir la sortie.				-
 
-
+	clear			-> Verfier la norme.				-
+				-> Verifer les fonctions autorisé.		-
+				-> Verifier les leaks.				-
+				-> verifier les commentaires.			-
 Divers :

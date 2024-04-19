@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 16:46:35 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/19 16:18:12 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/19 17:13:00 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,26 @@ void	liberer_str_tab(char **str)
 	free(str);
 }
 
+void	free_map(t_map *map)
+{
+	int	i;
+
+	if (map)
+	{
+		if (map->tab)
+		{
+			i = 0;
+			while (i < map->height)
+			{
+				free(map->tab[i]);
+				i++;
+			}
+			free(map->tab);
+		}
+		free(map);
+	}
+}
+
 void	main_free(t_so_long **game)
 {
 	if (!game)
@@ -51,10 +71,8 @@ void	main_free(t_so_long **game)
 		mlx_destroy_window((*game)->mlx, (*game)->window);
 	if ((*game)->mlx)
 		mlx_destroy_display((*game)->mlx);
-	if ((*game)->map->tab)
-		liberer_str_tab((*game)->map->tab);
-	// if ((*game)->map->maptest)
-	// 	free_tab_maptest(game);
+	if ((*game)->map)
+		free_map((*game)->map);
 	if ((*game)->mlx)
 		free((*game)->mlx);
 	if ((*game)->sprite)

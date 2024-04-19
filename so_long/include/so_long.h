@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:41:04 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/19 16:39:44 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/19 17:09:55 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ typedef struct s_so_long
 	t_sprites	*sprite	;
 	void		*mlx;
 	void		*window;
+	int			nb_pas;
 }	t_so_long;
 
 int		main(int ac, char **av);
@@ -92,6 +93,7 @@ void	errormlxspritewall(void);
 void	errormlxspriteground(void);
 void	liberer_str(char *str);
 void	liberer_str_tab(char **str);
+void	free_map(t_map *map);
 void	main_free(t_so_long **game);
 void	main_init(t_so_long **game);
 int		main_exit(t_so_long *game);
@@ -106,7 +108,6 @@ int		check_file_empty(char *filename);
 /*			MAP			*/
 void	main_map(int ac, char **av, t_map *map);
 t_map	*init_map(void);
-void	free_map(t_map *map);
 void	add_hight(char *filename, t_map *map);
 void	add_with(char *filename, t_map *map);
 void	add_malloc_tab(t_map *map);
@@ -117,15 +118,18 @@ void	check_rectangle(t_map *map);
 void	check_wall(t_map *map);
 void	check_playerandexit(t_map *map);
 void	check_collectible(t_map *map);
+
 /*			WINDOW			*/
 void	main_window_init(t_so_long **game);
 void	create_game_window(t_so_long **game);
 void	init_sprites(t_so_long **game);
 void	sprite_in_window(t_so_long **game);
 void	window_refresh(t_so_long **g, int i, int j);
+void	printstartgame(void);
+void	printnbpas(t_so_long **game);
+void	printendgame(t_so_long **game);
 
 /*			GAMEPLAY		*/
-
 
 /*			UTILS			*/
 // so_long

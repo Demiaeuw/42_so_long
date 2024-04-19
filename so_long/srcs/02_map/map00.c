@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:18:10 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/18 17:29:47 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/19 16:45:41 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,24 +36,4 @@ t_map	*init_map(void)
 	map->width = 0;
 	map->tab = NULL;
 	return (map);
-}
-
-void	free_map(t_map *map)
-{
-	int	i;
-
-	if (map)
-	{
-		if (map->tab)
-		{
-			i = 0;
-			while (i < map->height)
-			{
-				free(map->tab[i]);
-				i++;
-			}
-			free(map->tab);
-		}
-		free(map);
-	}
 }
