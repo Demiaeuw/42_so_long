@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:16:53 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/19 22:21:15 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/20 11:48:16 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ int	main_exit_nowin(t_so_long *game)
 {
 	printendgameechec();
 	main_free(&game);
-	return (0);
+	exit(0);
 }
