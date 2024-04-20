@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 22:46:32 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/20 12:33:43 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/20 13:42:04 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,27 @@ void	exit_position(t_so_long **game)
 		y++;
 	}
 	return ;
+}
+
+void	player_position(t_so_long **game)
+{
+	int	x;
+	int	y;
+
+	y = 0;
+	while ((*game)->map->tab[y])
+	{
+		x = 0;
+		while ((*game)->map->tab[y][x])
+		{
+			if ((*game)->map->tab[y][x] == PLAYER)
+			{
+				(*game)->position->x = x;
+				(*game)->position->y = y;
+			}
+			x++;
+		}
+		y++;
+	}
+	return ;	
 }

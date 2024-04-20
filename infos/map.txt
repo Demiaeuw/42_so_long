@@ -11,6 +11,11 @@ Fait :
 				-> EXIT_CLOSED.					ok
 				-> GROUND.					ok
 
+	ajout MLX		-> Ouvrir un fenetre.				ok
+				-> Bloquer la fenetre (format).			-????
+				-> Refresh fenetre.				ok
+				-> Fermer la fenetre proprement.		ok
+				
 
 A faire :
 
@@ -24,11 +29,8 @@ A faire :
 				-> Map réalisable (dfs).			-
 
 
-	ajout MLX		-> Ouvrir un fenetre.				ok
-				-> Bloquer la fenetre (format).			-
-				-> Refresh fenetre.				ok
-				-> Fermer la fenetre proprement.		ok
 
+	Mouvment MLX
 				-> Faire les mouvements.			-
 				-> Mouvement PLAYER.				-
 				-> Compteur de pas.				-

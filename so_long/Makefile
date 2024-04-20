@@ -19,7 +19,9 @@ SRCS =	main.c\
 	srcs/03_window/window00.c\
 	srcs/03_window/window01.c\
 	srcs/03_window/window02.c\
-	srcs/04_gameplay/gameplay00.c
+	srcs/04_gameplay/gameplay00.c\
+	srcs/04_gameplay/gameplay01.c\
+	srcs/04_gameplay/gameplay02.c
 
 UTILS =	srcs/utils/utils_so_long/ft_printmap.c\
 	srcs/utils/utils_so_long/ft_putendl_fd.c\

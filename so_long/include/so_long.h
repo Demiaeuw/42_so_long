@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:41:04 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/20 13:14:03 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/20 16:53:38 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,6 +132,7 @@ void	check_wall(t_map *map);
 void	check_playerandexit(t_map *map);
 void	check_collectible(t_map *map);
 void	exit_position(t_so_long **game);
+void	player_position(t_so_long **game);
 
 /*			WINDOW			*/
 void	main_window_init(t_so_long **game);
@@ -141,17 +142,26 @@ void	sprite_in_window(t_so_long **game);
 void	window_refresh(t_so_long **g, int i, int j);
 void	printstartgame(void);
 void	printnbpas(t_so_long **game);
-int	close_echap(int keycode, t_so_long *game);
+void	close_echap(t_so_long *game);
 void	printendgamevalid(t_so_long **game);
 void	printendgameechec(void);
 
 /*			GAMEPLAY		*/
 
-void	input_to_move(int keycode, t_so_long *game);
+int		input_to_move(int keycode, t_so_long *game);
+int		check_move(t_so_long **game, int new_x, int new_y);
+void	player_up(t_so_long **game);
+void	player_down(t_so_long **game);
+void	player_left(t_so_long **game);
+void	player_right(t_so_long **game);
+void	player_next_postion(t_so_long **game, char c);
+void	player_reset_position(t_so_long **game);
+void	refresh_window_after_mouve(t_so_long **game);
 
 /*			UTILS			*/
 // so_long
 void	print_map(t_map *map);
+void	print_map_game(t_so_long **game);
 int		ft_strcmpend(char *str, char *src);
 void	ft_putendl_fd(char *s, int fd);
 
