@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:41:04 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/20 16:53:38 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/20 17:28:11 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,6 +157,8 @@ void	player_right(t_so_long **game);
 void	player_next_postion(t_so_long **game, char c);
 void	player_reset_position(t_so_long **game);
 void	refresh_window_after_mouve(t_so_long **game);
+void	modif_exit(t_so_long **game);
+void	taking_exit(t_so_long **game, int new_y, int new_x);
 
 /*			UTILS			*/
 // so_long

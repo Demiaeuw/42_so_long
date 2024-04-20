@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 13:45:56 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/20 16:49:07 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/20 17:29:35 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,21 @@ void	refresh_window_after_mouve(t_so_long **game)
 {
 	window_refresh(game, (*game)->position->y, (*game)->position->x);
 	window_refresh(game, (*game)->position->y_end, (*game)->position->x_end);
+}
+
+void	modif_exit(t_so_long **game)
+{
+	(*game)->map->tab[(*game)->position->y_exit][(*game)->position->x_exit] = EXIT_OPEN;
+	window_refresh(game, (*game)->position->y_exit, (*game)->position->x_exit);
+}
+
+void	taking_exit(t_so_long **game, int new_y, int new_x)
+{
+	if ((*game)->map->tab[new_y][new_x] == EXIT_OPEN)
+	{
+		printendgamevalid(&(*game));
+		main_free(&(*game));
+		exit(0);
+	}
+	return ;
 }
