@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:18:10 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/20 13:09:18 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/20 17:12:40 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	main_map(int ac, char **av, t_map *map)
 	add_with(av[1], map);
 	add_malloc_tab(map);
 	add_map(av[1], map);
+	main_map_check(map);
 }
 
 t_map	*init_map(void)

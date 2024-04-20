@@ -8,7 +8,7 @@ maps
 srcs
 	00_erreur 	
 			erreur00 	-> Gestion des erreurs argument01.
-			erreur01 	> Erreur de map.
+			erreur01 	-> Erreur de map.
 			erreur02 	-> Erreur de map 2.
 			erreur03 	-> Erreur de chargement de Sprite.
 			erreur04 	-> Erreur de chargement de Sprite 2.
