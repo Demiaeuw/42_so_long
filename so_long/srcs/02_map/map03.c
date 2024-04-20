@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 22:46:32 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/15 22:46:32 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/20 12:33:43 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,28 @@ void	check_collectible(t_map *map)
 	if (count_c < 1)
 		errormapcall(errormapcollect, map);
 	map->collect = count_c;
+	return ;
+}
+
+void	exit_position(t_so_long **game)
+{
+	int	x;
+	int	y;
+
+	y = 0;
+	while ((*game)->map->tab[y])
+	{
+		x = 0;
+		while ((*game)->map->tab[y][x])
+		{
+			if ((*game)->map->tab[y][x] == EXIT_CLOSED)
+			{
+				(*game)->position->x_exit = x;
+				(*game)->position->y_exit = y;
+			}
+			x++;
+		}
+		y++;
+	}
 	return ;
 }

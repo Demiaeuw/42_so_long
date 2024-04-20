@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:49:42 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/19 22:21:15 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/20 12:08:18 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	printnbpas(t_so_long **game)
 
 int	close_echap(int keycode, t_so_long *game)
 {
-	if (keycode == 65307)
+	if (keycode == KEY_ESC)
 	{
 		printendgameechec();
 		main_free(&game);

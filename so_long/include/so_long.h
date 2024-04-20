@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:41:04 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/19 22:19:16 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/20 13:14:03 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,22 @@ typedef struct s_sprites
 	void	*wall;
 }	t_sprites;
 
+typedef struct s_position
+{
+	int		x;
+	int		y;
+	int		x_end;
+	int		y_end;
+	int		x_exit;
+	int		y_exit;
+}	t_position;
+
+
 typedef struct s_so_long
 {
 	t_map		*map;
-	t_sprites	*sprite	;
+	t_sprites	*sprite;
+	t_position	*position;
 	void		*mlx;
 	void		*window;
 	int			nb_pas;
@@ -97,6 +109,7 @@ void	free_map(t_map *map);
 void	main_free(t_so_long **game);
 void	main_init(t_so_long **game);
 int		main_exit_nowin(t_so_long *game);
+void	init_position(t_so_long **game);
 
 /*			ARGUMENT		*/
 int		main_argument(int ac, char **av);
@@ -118,6 +131,7 @@ void	check_rectangle(t_map *map);
 void	check_wall(t_map *map);
 void	check_playerandexit(t_map *map);
 void	check_collectible(t_map *map);
+void	exit_position(t_so_long **game);
 
 /*			WINDOW			*/
 void	main_window_init(t_so_long **game);
@@ -132,6 +146,8 @@ void	printendgamevalid(t_so_long **game);
 void	printendgameechec(void);
 
 /*			GAMEPLAY		*/
+
+void	input_to_move(int keycode, t_so_long *game);
 
 /*			UTILS			*/
 // so_long

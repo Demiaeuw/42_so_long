@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   gameplay00.c                                       :+:      :+:    :+:   */
+/*   gameplay01.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 15:57:11 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/20 12:59:20 by acabarba         ###   ########.fr       */
+/*   Created: 2024/04/20 12:13:27 by acabarba          #+#    #+#             */
+/*   Updated: 2024/04/20 12:24:42 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-// void	main_gameplay(void)
-// {
+int	check_move(t_so_long **game, int new_x, int new_y)
+{
+	if ((*game)->map->tab[new_y][new_x] == WALL)
+		return (1);
+	else if ((*game)->map->tab[new_y][new_x] == EXIT_CLOSED)
+		return (1);
+	return (0);
+}
 
-// }
-
-// void	input_to_move(int keycode, t_so_long *game)
-// {
-// 	if (keycode == KEY_Z || keycode == KEY_UP)
-// 		player_up(game);
-// 	if (keycode == KEY_S || keycode == KEY_DOWN)
-// 		player_down(game);
-// 	if (keycode == KEY_Q || keycode == KEY_LEFT)
-// 		player_left(game);
-// 	if (keycode == KEY_D || keycode == KEY_RIGHT)
-// 		player_right(game);
-// 	return ;
-// }

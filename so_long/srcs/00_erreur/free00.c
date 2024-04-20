@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 16:46:35 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/20 11:46:30 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/20 13:25:04 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ void	main_free(t_so_long **game)
 		free((*game)->mlx);
 	if ((*game)->sprite)
 		free((*game)->sprite);
+	if ((*game)->position)
+		free((*game)->position);
 	if ((*game))
 		free(*game);
 	return ;

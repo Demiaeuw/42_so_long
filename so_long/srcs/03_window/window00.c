@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:17:40 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/19 17:02:34 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/20 13:28:07 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	main_window_init(t_so_long **game)
 	init_sprites(game);
 	create_game_window(game);
 	printnbpas(game);
+	exit_position(game);
 }
 
 void	create_game_window(t_so_long **game)

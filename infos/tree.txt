@@ -21,7 +21,7 @@ srcs
 			map00	-> Main init et free t_map.
 			map01	-> Création du tableau de tableau et remplissage.
 			map02	-> Check des regles de map.
-			map03	-> Check des regles de map.
+			map03	-> Check des regles de map et position exit.
 	03_window
 			window00	-> Initialisation de la window mlx.
 			window01	-> Ajout des sprites sur la window + refresh.
@@ -29,6 +29,7 @@ srcs
 			window03	-> Blocage de la fenetre ??
 	04_gameplay
 			gameplay00	-> 
+			gameplay01	-> Mouvement et check mouvement.
 
 	utils		
 			ft_printf	-> Fichiers pour l'utilisation de ft_printf

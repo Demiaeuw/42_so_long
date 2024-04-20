@@ -27,7 +27,7 @@ A faire :
 	ajout MLX		-> Ouvrir un fenetre.				ok
 				-> Bloquer la fenetre (format).			-
 				-> Refresh fenetre.				ok
-				-> Fermer la fenetre proprement.		-
+				-> Fermer la fenetre proprement.		ok
 
 				-> Faire les mouvements.			-
 				-> Mouvement PLAYER.				-
@@ -43,5 +43,3 @@ A faire :
 				-> verifier les commentaires.			-
 				
 Divers :
-
-	- Manque 1 free quand fermeture par echap ou croix.

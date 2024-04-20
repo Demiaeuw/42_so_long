@@ -132,6 +132,8 @@ printend:
 	@sleep 0.1
 	@echo " "
 	@sleep 0.1
+	@echo " "
+	@sleep 0.1
 	@echo "   Utilitaire : \033[94m./so_long\033[0m est utilisable."
 	@sleep 0.1
 	@echo " "
