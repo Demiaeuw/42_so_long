@@ -6,16 +6,11 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 15:57:11 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/20 18:05:16 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/21 18:39:39 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
-
-// void	main_gameplay(void)
-// {
-
-// }
 
 int	input_to_move(int keycode, t_so_long *game)
 {

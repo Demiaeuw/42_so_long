@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 12:13:27 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/20 18:06:26 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/21 18:44:54 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,12 @@ void	player_up(t_so_long **game)
 		(*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] = PLAYER;
 		(*game)->map->collect -= 1;
 	}
+	else if ((*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] == WAPON)
+	{
+		(*game)->map->tab[(*game)->position->y][(*game)->position->x] = GROUND;
+		(*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] = PLAYER;
+		(*game)->payer_wapon = 1;
+	}
 	refresh_window_after_mouve(game);
 	player_reset_position(game);
 	(*game)->nb_pas += 1;
@@ -60,6 +66,12 @@ void	player_down(t_so_long **game)
 		(*game)->map->tab[(*game)->position->y][(*game)->position->x] = GROUND;
 		(*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] = PLAYER;
 		(*game)->map->collect -= 1;
+	}
+	else if ((*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] == WAPON)
+	{
+		(*game)->map->tab[(*game)->position->y][(*game)->position->x] = GROUND;
+		(*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] = PLAYER;
+		(*game)->payer_wapon = 1;
 	}
 	refresh_window_after_mouve(game);
 	player_reset_position(game);
@@ -84,6 +96,12 @@ void	player_left(t_so_long **game)
 		(*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] = PLAYER;
 		(*game)->map->collect -= 1;
 	}
+	else if ((*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] == WAPON)
+	{
+		(*game)->map->tab[(*game)->position->y][(*game)->position->x] = GROUND;
+		(*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] = PLAYER;
+		(*game)->payer_wapon = 1;
+	}
 	refresh_window_after_mouve(game);
 	player_reset_position(game);
 	(*game)->nb_pas += 1;
@@ -106,6 +124,12 @@ void	player_right(t_so_long **game)
 		(*game)->map->tab[(*game)->position->y][(*game)->position->x] = GROUND;
 		(*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] = PLAYER;
 		(*game)->map->collect -= 1;
+	}
+	else if ((*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] == WAPON)
+	{
+		(*game)->map->tab[(*game)->position->y][(*game)->position->x] = GROUND;
+		(*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] = PLAYER;
+		(*game)->payer_wapon = 1;
 	}
 	refresh_window_after_mouve(game);
 	player_reset_position(game);
