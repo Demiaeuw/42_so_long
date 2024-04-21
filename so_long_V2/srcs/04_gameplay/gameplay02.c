@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 13:45:56 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/21 19:09:48 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/21 20:41:42 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,6 @@ void	player_reset_position(t_so_long **game)
 
 void	refresh_window_after_mouve(t_so_long **game)
 {
-	if ((*game)->payer_wapon = 1)
-	{
-		(*game)->sprite->player = mlx_xpm_file_to_image((*game)->mlx,
-			"./sprite/PLAYERWAPON.xpm", 64, 64);
-	}
 	window_refresh(game, (*game)->position->y, (*game)->position->x);
 	window_refresh(game, (*game)->position->y_end, (*game)->position->x_end);
 }

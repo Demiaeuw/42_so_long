@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 20:23:01 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/21 18:33:15 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/21 21:28:34 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,30 +84,35 @@ void	check_wall(t_map *map)
 	j = 0;
 	while (i < map->width)
 	{
-		if ((map->tab[0][i] != WALL || map->tab[0][i] != WATER || 
-			map->tab[0][i] != ROCK) && map->tab[0][i] != '\r')
+		if ((map->tab[0][i] != WALL && map->tab[0][i] != WATER && 
+			map->tab[0][i] != ROCK && map->tab[0][i] != WATERGROUND)
+			&& map->tab[0][i] != '\r')
 			errormapcall(errormapwall, map);
 		if ((map->tab[map->height - 1][i] != WALL
-			|| map->tab[map->height - 1][i] != WATER
-			|| map->tab[map->height - 1][i] != ROCK)
+			&& map->tab[map->height - 1][i] != WATER
+			&& map->tab[map->height - 1][i] != ROCK
+			&& map->tab[map->height - 1][i] != WATERGROUND)
 			&& map->tab[map->height - 1][i] != '\r')
 			errormapcall(errormapwall, map);
 		i++;
 	}
 	while (j < map->height)
 	{
-		if ((map->tab[j][0] != WALL || map->tab[0][i] != WATER || 
-			map->tab[0][i] != ROCK) && map->tab[j][0] != '\r')
+		if ((map->tab[j][0] != WALL && map->tab[j][0] != WATER && 
+			map->tab[j][0] != ROCK && map->tab[j][0] != WATERGROUND)
+			&& map->tab[j][0] != '\r')
 			errormapcall(errormapwall, map);
 		if ((map->tab[j][map->width - 1] != WALL
-			|| map->tab[j][map->width - 1] != WATER
-			|| map->tab[j][map->width - 1] != ROCK)
+			&& map->tab[j][map->width - 1] != WATER
+			&& map->tab[j][map->width - 1] != ROCK
+			&& map->tab[j][map->width - 1] != WATERGROUND)
 			&& map->tab[j][map->width - 1] != '\r')
 			errormapcall(errormapwall, map);
 		j++;
 	}
 	return ;
 }
+
 
 void	check_playerandexit(t_map *map)
 {

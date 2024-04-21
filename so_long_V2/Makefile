@@ -21,10 +21,13 @@ SRCS =	main.c\
 	srcs/03_window/window02.c\
 	srcs/04_gameplay/gameplay00.c\
 	srcs/04_gameplay/gameplay01.c\
-	srcs/04_gameplay/gameplay02.c
+	srcs/04_gameplay/gameplay02.c\
+	srcs/04_gameplay/gameplay03.c\
+	srcs/04_gameplay/gameplay04.c
 
 UTILS =	srcs/utils/utils_so_long/ft_printmap.c\
 	srcs/utils/utils_so_long/ft_putendl_fd.c\
+	srcs/utils/utils_so_long/ft_strcmp.c\
 	srcs/utils/utils_so_long/ft_strcmpend.c
 
 OTHER =	srcs/utils/ft_printf/ft_printf00.c\

@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 12:13:27 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/21 18:44:54 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/21 21:49:50 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,17 @@ int	check_move(t_so_long **game, int new_y, int new_x)
 {
 	if ((*game)->map->tab[new_y][new_x] == WALL)
 		return (1);
+	else if ((*game)->map->tab[new_y][new_x] == ROCK)
+		return (1);
+	else if ((*game)->map->tab[new_y][new_x] == WATER)
+		return (1);
+	else if ((*game)->map->tab[new_y][new_x] == WATERGROUND)
+		return (1);
 	else if ((*game)->map->tab[new_y][new_x] == EXIT_CLOSED)
 		return (1);
+	else if ((*game)->map->tab[new_y][new_x] == ENEMY 
+		&& (*game)->payer_wapon != 1)
+		game_over(&(*game));
 	return (0);
 }
 
@@ -43,6 +52,11 @@ void	player_up(t_so_long **game)
 		(*game)->map->tab[(*game)->position->y][(*game)->position->x] = GROUND;
 		(*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] = PLAYER;
 		(*game)->payer_wapon = 1;
+	}
+	else if ((*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] == ENEMY)
+	{
+		(*game)->map->tab[(*game)->position->y][(*game)->position->x] = GROUND;
+		(*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] = PLAYER;
 	}
 	refresh_window_after_mouve(game);
 	player_reset_position(game);
@@ -73,6 +87,11 @@ void	player_down(t_so_long **game)
 		(*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] = PLAYER;
 		(*game)->payer_wapon = 1;
 	}
+	else if ((*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] == ENEMY)
+	{
+		(*game)->map->tab[(*game)->position->y][(*game)->position->x] = GROUND;
+		(*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] = PLAYER;
+	}
 	refresh_window_after_mouve(game);
 	player_reset_position(game);
 	(*game)->nb_pas += 1;
@@ -102,6 +121,11 @@ void	player_left(t_so_long **game)
 		(*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] = PLAYER;
 		(*game)->payer_wapon = 1;
 	}
+	else if ((*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] == ENEMY)
+	{
+		(*game)->map->tab[(*game)->position->y][(*game)->position->x] = GROUND;
+		(*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] = PLAYER;
+	}
 	refresh_window_after_mouve(game);
 	player_reset_position(game);
 	(*game)->nb_pas += 1;
@@ -130,6 +154,11 @@ void	player_right(t_so_long **game)
 		(*game)->map->tab[(*game)->position->y][(*game)->position->x] = GROUND;
 		(*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] = PLAYER;
 		(*game)->payer_wapon = 1;
+	}
+	else if ((*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] == ENEMY)
+	{
+		(*game)->map->tab[(*game)->position->y][(*game)->position->x] = GROUND;
+		(*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] = PLAYER;
 	}
 	refresh_window_after_mouve(game);
 	player_reset_position(game);

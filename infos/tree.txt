@@ -28,8 +28,11 @@ srcs
 			window02	-> Affichage terminal et echap exit.
 			window03	-> Blocage de la fenetre ??
 	04_gameplay
-			gameplay00	-> 
+			gameplay00	-> Main mouvement.
 			gameplay01	-> Mouvement et check mouvement.
+			gameplay02	-> Mouvement et check exit.
+			gameplay03	-> Game over et sprite wapon.
+			gameplay04	-> Language select.
 
 	utils		
 			ft_printf	-> Fichiers pour l'utilisation de ft_printf

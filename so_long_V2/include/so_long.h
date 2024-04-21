@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:41:04 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/21 19:08:41 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/21 23:26:10 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@
 # include <X11/X.h>
 # include <X11/keysym.h>
 
+# define KEY_ENTER 65293
 # define KEY_ESC 65307
+# define KEY_A 97
+# define KEY_W 119
 # define KEY_Z 122
 # define KEY_Q 113
 # define KEY_S 115
@@ -56,17 +59,18 @@ typedef struct s_map
 
 typedef struct s_sprites
 {
-	void	*player;
-	void	*collectible;
-	void	*exit_closed;
-	void	*exit_open;
-	void	*ground;
-	void	*wall;
-	void	*rock;
-	void	*water;
-	void	*waterground;
-	void	*wapon;
-	void	*enemy;
+	void	*player_right;//
+	void	*player_left;
+	void	*collectible;//
+	void	*exit_closed;//
+	void	*exit_open;//
+	void	*ground;//
+	void	*wall;//
+	void	*rock;//
+	void	*water;//
+	void	*waterground;//
+	void	*wapon;//
+	void	*enemy;//
 }	t_sprites;
 
 typedef struct s_position
@@ -79,16 +83,28 @@ typedef struct s_position
 	int		y_exit;
 }	t_position;
 
+typedef struct	s_keys
+{
+	int	esc;
+	int	up;
+	int	down;
+	int	left;
+	int	right;
+}	t_keys;
+
 typedef struct s_so_long
 {
 	t_map		*map;
 	t_sprites	*sprite;
 	t_position	*position;
+	t_keys		*keybind;
 	void		*mlx;
 	void		*window;
 	int			nb_pas;
 	int			payer_wapon;
+	int			nb_enemy;
 }	t_so_long;
+
 
 int		main(int ac, char **av);
 
@@ -150,8 +166,11 @@ void	player_position(t_so_long **game);
 void	main_window_init(t_so_long **game);
 void	create_game_window(t_so_long **game);
 void	init_sprites00(t_so_long **game);
+void	init_sprites01(t_so_long **game);
+void	init_sprites02(t_so_long **game);
 void	sprite_in_window(t_so_long **game);
 void	window_refresh(t_so_long **g, int i, int j);
+void	window_refresh2(t_so_long **g, int i, int j);
 void	printstartgame(void);
 void	printnbpas(t_so_long **game);
 void	close_echap(t_so_long *game);
@@ -171,12 +190,17 @@ void	player_reset_position(t_so_long **game);
 void	refresh_window_after_mouve(t_so_long **game);
 void	modif_exit(t_so_long **game);
 void	taking_exit(t_so_long **game, int new_y, int new_x);
+void	change_sprite_wapon(t_so_long **game);
+void	game_over(t_so_long **game);
+void	select_language(t_so_long **game, int ac, char **av);
+
 
 /*			UTILS			*/
 // so_long
 void	print_map(t_map *map);
 void	print_map_game(t_so_long **game);
 int		ft_strcmpend(char *str, char *src);
+int		ft_strcmp(char *s1, char *s2);
 void	ft_putendl_fd(char *s, int fd);
 
 // ft_printf

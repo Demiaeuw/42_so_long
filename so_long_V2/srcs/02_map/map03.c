@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 22:46:32 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/20 18:04:30 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/21 22:13:28 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,29 @@ void	player_position(t_so_long **game)
 		y++;
 	}
 	return ;	
+}
+
+void	count_enemy(t_so_long **game)
+{
+	int	i;
+	int	j;
+	int	count;
+	
+	i = 0;
+	count = 0;
+	while ((*game)->map->tab[i])
+	{
+		j = 0;
+		while ((*game)->map->tab[i][j])
+		{
+			if ((*game)->map->tab[i][j] == ENEMY)
+				count++;
+			j++;
+		}
+		i++;
+	}
+	if (count < 1)
+		errormapcall(errormapcollect, (*game)->map);
+	(*game)->nb_enemy = count;
+	return ;
 }

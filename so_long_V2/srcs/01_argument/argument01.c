@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   argument_00.c                                      :+:      :+:    :+:   */
+/*   argument01.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 15:09:20 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/12 15:09:20 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/21 23:29:22 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,15 @@ int	main_argument_erreur(int ac, char **av)
 	if (ac != 2)
 	{
 		errorargc();
+		ft_printf("1\n");
 		return (0);
 	}
+	// if (ac == 3 && ft_strcmp(av[2], "eng"))
+	// {
+	// 	errorargc();
+	// 	ft_printf("2\n");
+	// 	exit(0);
+	// }
 	if (!check_ber(ac, av))
 		return (0);
 	if (!check_file_exist(av[1]))
