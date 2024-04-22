@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:17:40 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/20 13:44:56 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/22 13:05:06 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,11 @@ void	init_sprites(t_so_long **game)
 			"./sprite/EXIT_OPEN.xpm", &size, &size);
 	if ((*game)->sprite->exit_open == NULL)
 		errormlxcall(errormlxspriteexitopen, (*game));
+	init_sprites2(game, size);
+}
+
+void	init_sprites2(t_so_long **game, int size)
+{
 	(*game)->sprite->collectible = mlx_xpm_file_to_image((*game)->mlx,
 			"./sprite/COLLECT_sword.xpm", &size, &size);
 	if ((*game)->sprite->collectible == NULL)

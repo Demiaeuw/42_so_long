@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 22:46:32 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/20 18:04:30 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/22 12:40:19 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,5 @@ void	player_position(t_so_long **game)
 		}
 		y++;
 	}
-	return ;	
+	return ;
 }

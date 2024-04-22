@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:49:42 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/20 16:53:38 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/22 12:45:43 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,5 @@ void	printendgamevalid(t_so_long **game)
 void	printendgameechec(void)
 {
 	ft_printf("\n\n");
-	ft_printf("Merci D'avoir joué !\n\n");	
+	ft_printf("Merci D'avoir joué !\n\n");
 }

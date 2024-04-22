@@ -22,6 +22,7 @@ srcs
 			map01	-> Création du tableau de tableau et remplissage.
 			map02	-> Check des regles de map.
 			map03	-> Check des regles de map et position exit.
+			map04	-> DFS
 	03_window
 			window00	-> Initialisation de la window mlx.
 			window01	-> Ajout des sprites sur la window + refresh.

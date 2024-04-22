@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 12:13:27 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/20 18:06:26 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/22 12:38:38 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,94 +21,31 @@ int	check_move(t_so_long **game, int new_y, int new_x)
 	return (0);
 }
 
-void	player_up(t_so_long **game)
+void	update_map(t_so_long **game, char cell)
 {
-	player_next_postion(game, 'u');
-	if (check_move(game, (*game)->position->y_end, (*game)->position->x_end))
-		return ;
-	taking_exit(game, (*game)->position->y_end, (*game)->position->x_end);
-	if ((*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] == GROUND)
-	{
-		(*game)->map->tab[(*game)->position->y][(*game)->position->x] = GROUND;
-		(*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] = PLAYER;
-	}
-	else if ((*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] == COLLECT)
-	{
-		(*game)->map->tab[(*game)->position->y][(*game)->position->x] = GROUND;
-		(*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] = PLAYER;
-		(*game)->map->collect -= 1;
-	}
-	refresh_window_after_mouve(game);
-	player_reset_position(game);
-	(*game)->nb_pas += 1;
+	int	x_end;
+	int	y_end;
 
+	x_end = (*game)->position->x_end;
+	y_end = (*game)->position->y_end;
+	(*game)->map->tab[(*game)->position->y][(*game)->position->x] = GROUND;
+	(*game)->map->tab[y_end][x_end] = PLAYER;
+	if (cell == COLLECT)
+		(*game)->map->collect -= 1;
 }
 
-void	player_down(t_so_long **game)
+void	move_player(t_so_long **game, char direction)
 {
-	player_next_postion(game, 'd');
-	if (check_move(game, (*game)->position->y_end, (*game)->position->x_end))
-		return ;
-	taking_exit(game, (*game)->position->y_end, (*game)->position->x_end);
-	if ((*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] == GROUND)
-	{
-		(*game)->map->tab[(*game)->position->y][(*game)->position->x] = GROUND;
-		(*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] = PLAYER;
-	}
-	else if ((*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] == COLLECT)
-	{
-		(*game)->map->tab[(*game)->position->y][(*game)->position->x] = GROUND;
-		(*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] = PLAYER;
-		(*game)->map->collect -= 1;
-	}
-	refresh_window_after_mouve(game);
-	player_reset_position(game);
-	(*game)->nb_pas += 1;
-	
-}
+	char	c;
 
-void	player_left(t_so_long **game)
-{
-	player_next_postion(game, 'l');
+	player_next_postion(game, direction);
 	if (check_move(game, (*game)->position->y_end, (*game)->position->x_end))
 		return ;
 	taking_exit(game, (*game)->position->y_end, (*game)->position->x_end);
-	if ((*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] == GROUND)
-	{
-		(*game)->map->tab[(*game)->position->y][(*game)->position->x] = GROUND;
-		(*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] = PLAYER;
-	}
-	else if ((*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] == COLLECT)
-	{
-		(*game)->map->tab[(*game)->position->y][(*game)->position->x] = GROUND;
-		(*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] = PLAYER;
-		(*game)->map->collect -= 1;
-	}
+	c = (*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end];
+	if (c == GROUND || c == COLLECT)
+		update_map(game, c);
 	refresh_window_after_mouve(game);
 	player_reset_position(game);
 	(*game)->nb_pas += 1;
-	
-}
-
-void	player_right(t_so_long **game)
-{
-	player_next_postion(game, 'r');
-	if (check_move(game, (*game)->position->y_end, (*game)->position->x_end))
-		return ;
-	taking_exit(game, (*game)->position->y_end, (*game)->position->x_end);
-	if ((*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] == GROUND)
-	{
-		(*game)->map->tab[(*game)->position->y][(*game)->position->x] = GROUND;
-		(*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] = PLAYER;
-	}
-	else if ((*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] == COLLECT)
-	{
-		(*game)->map->tab[(*game)->position->y][(*game)->position->x] = GROUND;
-		(*game)->map->tab[(*game)->position->y_end][(*game)->position->x_end] = PLAYER;
-		(*game)->map->collect -= 1;
-	}
-	refresh_window_after_mouve(game);
-	player_reset_position(game);
-	(*game)->nb_pas += 1;
-	
 }

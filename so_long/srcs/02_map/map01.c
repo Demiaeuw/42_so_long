@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:18:20 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/18 17:28:57 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/22 13:13:20 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,10 +91,7 @@ void	add_map(char *filename, t_map *map)
 
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
-	{
-		perror("Erreur d'ouverture du fichier");
-		exit(EXIT_FAILURE);
-	}
+		erroropen();
 	i = 0;
 	while ((ret = read(fd, &c, 1)) > 0)
 	{

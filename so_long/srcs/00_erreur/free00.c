@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 16:46:35 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/20 13:25:04 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/22 12:43:50 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,11 @@ void	main_free(t_so_long **game)
 		mlx_destroy_window((*game)->mlx, (*game)->window);
 	if ((*game)->mlx)
 		mlx_destroy_display((*game)->mlx);
+	main_free2(game);
+}
+
+void	main_free2(t_so_long **game)
+{
 	if ((*game)->map)
 		free_map((*game)->map);
 	if ((*game)->mlx)
@@ -81,5 +86,4 @@ void	main_free(t_so_long **game)
 		free((*game)->position);
 	if ((*game))
 		free(*game);
-	return ;
 }

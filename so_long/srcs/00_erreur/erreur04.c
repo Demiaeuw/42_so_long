@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:11:45 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/19 16:22:49 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/22 13:12:56 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,10 @@ void	errormlxspriteground(void)
 	ft_putendl_fd("\n", 1);
 	ft_putendl_fd("Probleme de chargement du sprite GROUND", 1);
 	ft_putendl_fd("\n", 1);
+}
+
+void	erroropen(void)
+{
+	perror("Erreur d'ouverture du fichier");
+	exit(EXIT_FAILURE);
 }

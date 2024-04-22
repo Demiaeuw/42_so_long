@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:41:04 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/20 18:04:30 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/22 13:13:46 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,10 +102,12 @@ void	errormlxspritewall(void);
 void	errormlxspritecollect(void);
 void	errormlxspritewall(void);
 void	errormlxspriteground(void);
+void	erroropen(void);
 void	liberer_str(char *str);
 void	liberer_str_tab(char **str);
 void	free_map(t_map *map);
 void	main_free(t_so_long **game);
+void	main_free2(t_so_long **game);
 void	main_init(t_so_long **game);
 int		main_exit_nowin(t_so_long *game);
 void	init_position(t_so_long **game);
@@ -123,7 +125,7 @@ t_map	*init_map(void);
 void	add_hight(char *filename, t_map *map);
 void	add_with(char *filename, t_map *map);
 void	add_malloc_tab(t_map *map);
-void	add_map(char *filename, t_map *map);;
+void	add_map(char *filename, t_map *map);
 void	main_map_check(t_map *map);
 void	check_content(t_map *map);
 void	check_rectangle(t_map *map);
@@ -137,6 +139,7 @@ void	player_position(t_so_long **game);
 void	main_window_init(t_so_long **game);
 void	create_game_window(t_so_long **game);
 void	init_sprites(t_so_long **game);
+void	init_sprites2(t_so_long **game, int size);
 void	sprite_in_window(t_so_long **game);
 void	window_refresh(t_so_long **g, int i, int j);
 void	printstartgame(void);
@@ -148,7 +151,9 @@ void	printendgameechec(void);
 /*			GAMEPLAY		*/
 
 int		input_to_move(int keycode, t_so_long *game);
-int		check_move(t_so_long **game, int new_x, int new_y);
+int		check_move(t_so_long **game, int new_y, int new_x);
+void	update_map(t_so_long **game, char cell);
+void	move_player(t_so_long **game, char direction);
 void	player_up(t_so_long **game);
 void	player_down(t_so_long **game);
 void	player_left(t_so_long **game);
