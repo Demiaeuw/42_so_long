@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:36:53 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/20 17:05:37 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/22 17:53:38 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	main(int ac, char **av)
 		return (0);
 	}
 	main_map(ac, av, game->map);
+	main_dfs(&game);
 	main_window_init(&game);
 	sprite_in_window(&game);
 	mlx_hook(game->window, 2, 1L<<0, &input_to_move, game);

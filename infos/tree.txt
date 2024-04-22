@@ -13,16 +13,18 @@ srcs
 			erreur03 	-> Erreur de chargement de Sprite.
 			erreur04 	-> Erreur de chargement de Sprite 2.
 			free00		-> Fonction de base pour free.
+			free01		-> Main free.
 			init00		-> Fonction d'initialisation et des exits.
 	01_arguments
 			argument00 -> Main pour toutes la gestion des arguments.
 			argument01 -> Gestion bonne saisie / .ber / existe.
 	02_map
-			map00	-> Main init et free t_map.
-			map01	-> Création du tableau de tableau et remplissage.
-			map02	-> Check des regles de map.
-			map03	-> Check des regles de map et position exit.
-			map04	-> DFS
+			map00		-> Main init et free t_map.
+			map01		-> Création du tableau de tableau et remplissage.
+			map02		-> Check des regles de map.
+			map03		-> Check des regles de map et position exit.
+			mapdfs00	-> DFS.
+			mapdfs01	-> DFS.
 	03_window
 			window00	-> Initialisation de la window mlx.
 			window01	-> Ajout des sprites sur la window + refresh.
@@ -32,8 +34,7 @@ srcs
 			gameplay00	-> Main mouvement.
 			gameplay01	-> Mouvement et check mouvement.
 			gameplay02	-> Mouvement et check exit.
-			gameplay03	-> Game over et sprite wapon.
-			gameplay04	-> Language select.
+			gameplay03	-> Mouvment Player avec reset window et modif exit.
 
 	utils		
 			ft_printf	-> Fichiers pour l'utilisation de ft_printf

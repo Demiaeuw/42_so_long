@@ -9,6 +9,7 @@ SRCS =	main.c\
 	srcs/00_erreur/erreur03.c\
 	srcs/00_erreur/erreur04.c\
 	srcs/00_erreur/free00.c\
+	srcs/00_erreur/free01.c\
 	srcs/00_erreur/init00.c\
 	srcs/01_argument/argument00.c\
 	srcs/01_argument/argument01.c\
@@ -16,6 +17,8 @@ SRCS =	main.c\
 	srcs/02_map/map01.c\
 	srcs/02_map/map02.c\
 	srcs/02_map/map03.c\
+	srcs/02_map/mapdfs00.c\
+	srcs/02_map/mapdfs01.c\
 	srcs/03_window/window00.c\
 	srcs/03_window/window01.c\
 	srcs/03_window/window02.c\

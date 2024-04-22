@@ -6,7 +6,7 @@
 /*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:41:04 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/22 13:13:46 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/22 18:03:51 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ typedef struct s_map
 	int		width;
 	int		collect;
 	char	**tab;
+	char	**dfs_tab;
 }	t_map;
 
 typedef struct s_sprites
@@ -103,11 +104,14 @@ void	errormlxspritecollect(void);
 void	errormlxspritewall(void);
 void	errormlxspriteground(void);
 void	erroropen(void);
+/*			FREE			*/
 void	liberer_str(char *str);
 void	liberer_str_tab(char **str);
 void	free_map(t_map *map);
+void	free_map2(t_map *map);
 void	main_free(t_so_long **game);
 void	main_free2(t_so_long **game);
+/*			INIT			*/
 void	main_init(t_so_long **game);
 int		main_exit_nowin(t_so_long *game);
 void	init_position(t_so_long **game);
@@ -134,6 +138,13 @@ void	check_playerandexit(t_map *map);
 void	check_collectible(t_map *map);
 void	exit_position(t_so_long **game);
 void	player_position(t_so_long **game);
+/*			MAP_DFS			*/
+void	main_dfs(t_so_long **game);
+void	dfs_add_malloc_tab(t_map *map);
+void	dfs_add_map(char *filename, t_map *map);
+int		dfs(int x, int y, int collect, char **tab);
+int	dfs_player_position_x(t_so_long **game);
+int	dfs_player_position_y(t_so_long **game);
 
 /*			WINDOW			*/
 void	main_window_init(t_so_long **game);
@@ -167,7 +178,9 @@ void	taking_exit(t_so_long **game, int new_y, int new_x);
 /*			UTILS			*/
 // so_long
 void	print_map(t_map *map);
+void	print_dfs_map(t_map *map);
 void	print_map_game(t_so_long **game);
+void	print_dfs_map_game(t_so_long **game);
 int		ft_strcmpend(char *str, char *src);
 void	ft_putendl_fd(char *s, int fd);
 
