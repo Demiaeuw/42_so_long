@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mapdfs00.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 15:57:41 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/22 18:06:47 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/25 03:51:58 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,8 @@ void	dfs_add_map(char *filename, t_map *map)
 	if (fd == -1)
 		erroropen();
 	i = 0;
-	while ((ret = read(fd, &c, 1)) > 0)
+	ret = read(fd, &c, 1);
+	while (ret > 0)
 	{
 		k = 0;
 		while (c != '\n' && ret > 0)
@@ -81,6 +82,7 @@ void	dfs_add_map(char *filename, t_map *map)
 		}
 		map->dfs_tab[i][k] = '\0';
 		i++;
+		ret = read(fd, &c, 1);
 	}
 	close(fd);
 }

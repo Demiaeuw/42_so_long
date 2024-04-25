@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map01.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:18:20 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/22 13:13:20 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/04/25 03:50:05 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,8 @@ void	add_map(char *filename, t_map *map)
 	if (fd == -1)
 		erroropen();
 	i = 0;
-	while ((ret = read(fd, &c, 1)) > 0)
+	ret = read(fd, &c, 1);
+	while (ret > 0)
 	{
 		k = 0;
 		while (c != '\n' && ret > 0)
@@ -104,6 +105,7 @@ void	add_map(char *filename, t_map *map)
 		}
 		map->tab[i][k] = '\0';
 		i++;
+		ret = read(fd, &c, 1);
 	}
 	close(fd);
 }
