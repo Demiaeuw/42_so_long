@@ -25,23 +25,20 @@ Fait :
 				-> Changement EXIT_CLOSED to EXIT_OPEN.		ok
 				-> Ouvrir la sortie.				ok
 
-A faire :
-
-
 	Parsing de map :	-> Check si norme (1 C 0 E P).			ok
 				-> Un seul P.					ok
 				-> Un seul E.					ok
 				-> Minimum un C.				ok
 				-> Check si rectangulaire.			ok
 				-> Check des mur exterieur.			ok
-				-> Map réalisable (dfs).			-
+				-> Map réalisable (dfs).			ok
 
+A faire :
 
-
-
-	clear			-> Verfier la norme.				-
+	clear			-> Verfier la norme.				ok
 				-> Verifer les fonctions autorisé.		-
 				-> Verifier les leaks.				-
 				-> verifier les commentaires.			-
+				-> verifier les erreurs valgrind		-
 				
 Divers :
