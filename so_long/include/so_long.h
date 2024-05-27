@@ -145,8 +145,8 @@ void	main_dfs(t_so_long **game);
 void	dfs_add_malloc_tab(t_map *map);
 void	dfs_add_map(char *filename, t_map *map);
 int		dfs(int x, int y, int collect, char **tab);
-int	dfs_player_position_x(t_so_long **game);
-int	dfs_player_position_y(t_so_long **game);
+int		dfs_player_position_x(t_so_long **game);
+int		dfs_player_position_y(t_so_long **game);
 
 /*			WINDOW			*/
 void	main_window_init(t_so_long **game);
