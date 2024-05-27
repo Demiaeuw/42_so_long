@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acabarba <acabarba@student.42Perpignan.    +#+  +:+       +#+        */
+/*   By: acabarba <acabarba@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 14:41:04 by acabarba          #+#    #+#             */
-/*   Updated: 2024/04/22 18:03:51 by acabarba         ###   ########.fr       */
+/*   Updated: 2024/05/27 19:03:53 by acabarba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@
 # define KEY_Q 113
 # define KEY_S 115
 # define KEY_D 100
+# define KEY_A 97
+# define KEY_W 119
 # define KEY_UP 65362
 # define KEY_DOWN 65364
 # define KEY_RIGHT 65363
